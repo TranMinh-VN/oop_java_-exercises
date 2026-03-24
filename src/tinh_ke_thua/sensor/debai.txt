@@ -1,0 +1,68 @@
+Đoạn mã này mô phỏng một hệ thống quan trắc thời tiết đơn giản bằng ngôn ngữ Java, được thiết kế để minh họa các nguyên tắc cốt lõi của Lập trình Hướng đối tượng (OOP).
+
+Hệ thống bao gồm một WeatherStation (Trạm thời tiết) trung tâm, có nhiệm vụ quản lý một danh sách các WeatherSensor (Cảm biến thời tiết) khác nhau.
+
+Các nguyên tắc OOP được thể hiện rõ ràng:
+
+Tính trừu tượng (Abstraction): Lớp WeatherSensor là một lớp trừu tượng, định nghĩa các thuộc tính chung (như id, location) và một hành vi bắt buộc (generateReport()) mà mọi cảm biến cụ thể phải triển khai. Nó cho chúng ta biết một cảm biến là gì mà không cần quan tâm nó hoạt động như thế nào.
+
+Tính kế thừa (Inheritance): Các lớp cảm biến cụ thể như TemperatureSensor, HumiditySensor, và WindSensor kế thừa từ WeatherSensor. Chúng tái sử dụng các thuộc tính chung và cung cấp các triển khai riêng cho phương thức generateReport().
+
+Tính đa hình (Polymorphism): Tại lớp WeatherStation, khi gọi phương thức generateFullReport(), vòng lặp duyệt qua danh sách các WeatherSensor và gọi sensor.generateReport(). Mặc dù cùng một lời gọi phương thức, nhưng tùy thuộc vào đối tượng thực tế là TemperatureSensor hay HumiditySensor, v.v., mà phiên bản generateReport() tương ứng của lớp đó sẽ được thực thi. Điều này cho phép hệ thống dễ dàng mở rộng với các loại cảm biến mới mà không cần sửa đổi mã của WeatherStation.
+
+Tính đóng gói (Encapsulation): Mỗi lớp cảm biến đóng gói dữ liệu riêng của nó (ví dụ: celsius trong TemperatureSensor) và các phương thức hoạt động trên dữ liệu đó. Các chi tiết triển khai bên trong (ví dụ: cách chuyển đổi từ độ C sang độ F) được che giấu khỏi thế giới bên ngoài.
+
+Yêu cầu: Hoàn thiện mã nguồn cho hệ thống trạm quan trắc thời tiết bằng cách triển khai logic cho các phương thức được đánh dấu [YÊU CẦU DÀNH CHO HỌC SINH] trong các tệp sau:
+
+Trong tệp TemperatureSensor.java:
+
+Phương thức getFahrenheit():
+
+Viết mã để chuyển đổi nhiệt độ từ độ C sang độ F theo công thức: F=(C×5/9​)+32.
+
+Phương thức generateReport():
+
+Tạo chuỗi báo cáo theo định dạng: Nhiệt độ: [độ C]°C ([độ F]°F).
+
+Giá trị số cần được làm tròn đến một chữ số thập phân.
+
+Thêm cảnh báo " - CẢNH BÁO: Nhiệt độ rất cao!" nếu độ C lớn hơn 38.0.
+
+Thêm cảnh báo " - CẢNH BÁO: Nhiệt độ rất thấp!" nếu độ C nhỏ hơn 5.0.
+
+Trong tệp HumiditySensor.java:
+
+Phương thức generateReport():
+
+Tạo chuỗi báo cáo theo định dạng: Độ ẩm: [giá trị]% ([mô tả]).
+
+Giá trị độ ẩm cần được làm tròn đến một chữ số thập phân.
+
+Phần [mô tả] phải được xác định dựa trên giá trị độ ẩm:
+
+< 30: "Khô"
+
+>= 30 và <= 60: "Lý tưởng"
+
+> 60: "Ẩm ướt"
+
+Trong tệp WindSensor.java:
+
+Phương thức getBeaufortDescription():
+
+Dựa trên tốc độ gió speedKmh, trả về mô tả chính xác theo các cấp độ sau:
+
+< 1: "Lặng gió"
+
+<= 5: "Gió nhẹ"
+
+<= 19: "Gió yếu"
+
+<= 38: "Gió vừa"
+
+<= 61: "Gió khá mạnh"
+
+<= 88: "Gió mạnh"
+
+> 88: "Bão"
+

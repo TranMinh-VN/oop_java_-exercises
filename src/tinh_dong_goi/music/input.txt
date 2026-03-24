@@ -1,0 +1,30 @@
+# Dữ liệu cho dịch vụ âm nhạc
+
+NGHESI
+NS01,Sơn Tùng M-TP
+NS02,Taylor Swift
+NS03,Ed Sheeran
+
+BAIHAT
+# ID_BaiHat,Ten_BaiHat,ID_NgheSi,ThoiLuongGiay
+BH001,Hãy Trao Cho Anh,NS01,255
+BH002,Nơi Này Có Anh,NS01,261
+BH003,Blank Space,NS02,231
+BH004,Lover,NS02,221
+BH005,Shape of You,NS03,233
+
+NGUOIDUNG
+USER01,An
+USER02,Bình
+
+PLAYLIST
+# Ten_Playlist,ID_NguoiTao
+Nhạc V-Pop Hay Nhất,USER01
+ADD,BH001
+ADD,BH002
+PLAYLIST
+US-UK Chill,USER02
+ADD,BH003
+ADD,BH005
+
+END

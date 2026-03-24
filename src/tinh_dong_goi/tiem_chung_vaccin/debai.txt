@@ -1,0 +1,45 @@
+Bài tập này mô phỏng một hệ thống quản lý tiêm chủng vaccine COVID-19 đơn giản. Hệ thống được xây dựng dựa trên các nguyên tắc lập trình hướng đối tượng (OOP) để quản lý các thực thể và quy trình trong thế giới thực.
+
+Các thành phần chính của hệ thống bao gồm:
+
+NguoiDan: Đại diện cho công dân, mỗi người có thông tin cá nhân (CCCD, họ tên) và lịch sử các mũi tiêm đã thực hiện.
+
+TrungTamTiemChung: Đại diện cho một địa điểm tiêm chủng, có thông tin riêng và một "kho" để quản lý số lượng của từng loại vaccine.
+
+Vaccine: Định nghĩa các loại vaccine có sẵn trong hệ thống (Pfizer, Moderna, v.v.), mỗi loại có quy định về số liều cần thiết.
+
+LichHenTiem: Một đối tượng dữ liệu đơn giản, kết nối một người dân, một trung tâm và loại vaccine cho một buổi hẹn cụ thể.
+
+QuanLyTiemChung: Lớp dịch vụ trung tâm, chịu trách nhiệm điều phối toàn bộ hoạt động. Đây là nơi chứa logic nghiệp vụ chính như xử lý việc đặt lịch hẹn và ghi nhận một mũi tiêm đã hoàn thành.
+
+Nhiệm vụ của bạn là:
+
+Hoàn thiện phần logic nghiệp vụ còn thiếu trong file QuanLyTiemChung.java. Cụ thể, bạn cần lập trình cho 2 phương thức sau:
+
+public static LichHenTiem datLichHen(String cccd, String idTrungTam, Vaccine loaiVaccine)
+
+Mục tiêu: Xử lý yêu cầu đặt lịch hẹn tiêm.
+
+Yêu cầu logic:
+
+Tìm kiếm người dân theo cccd và trung tâm tiêm chủng theo idTrungTam.
+
+Kiểm tra xem người dân đã hoàn thành liệu trình tiêm chủng cho loại vaccine này hay chưa.
+
+Kiểm tra xem trung tâm có còn đủ vaccine được yêu cầu trong kho hay không.
+
+Nếu tất cả điều kiện hợp lệ, hãy tạo và trả về một đối tượng LichHenTiem.
+
+Nếu bất kỳ điều kiện nào không hợp lệ, hãy in thông báo lỗi tương ứng và trả về null.
+
+public static void ghiNhanTiem(LichHenTiem lichHen)
+
+Mục tiêu: Cập nhật trạng thái hệ thống sau khi một mũi tiêm được thực hiện.
+
+Yêu cầu logic:
+
+Thêm một bản ghi mới vào lịch sử tiêm chủng của người dân.
+
+Giảm số lượng vaccine tương ứng trong kho của trung tâm đi một đơn vị.
+
+In thông báo xác nhận việc ghi nhận đã thành công.

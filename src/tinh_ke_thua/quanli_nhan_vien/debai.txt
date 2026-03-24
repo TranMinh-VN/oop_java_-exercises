@@ -1,0 +1,11 @@
+BÀI TẬP: QUẢN LÝ NHÂN VIÊN CÔNG TY
+
+Chủ đề: Tính kế thừa (Inheritance) và Đa hình (Polymorphism)
+
+ YÊU CẦU:
+
+ - Hoàn thiện 2 class: FullTimeEmployee và PartTimeEmployee
+
+ - Cả 2 class đều phải implement interface Employee
+
+ - Override phương thức toString() để hiển thị thông tin

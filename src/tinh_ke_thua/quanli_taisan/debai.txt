@@ -1,0 +1,37 @@
+Bài toán xây dựng một hệ thống có thể quản lý nhiều loại tài sản khác nhau. Mỗi loại tài sản có cách tính toán giá trị thay đổi theo thời gian riêng biệt:
+
+Cổ phiếu (CoPhieu): Giá trị biến động một cách ngẫu nhiên, phụ thuộc vào mức độ rủi ro.
+
+Trái phiếu (TraiPhieu): Giá trị tăng trưởng ổn định theo một mức lãi suất cố định hàng năm.
+
+Bất động sản (BatDongSan): Giá trị tăng theo tỉ lệ tăng giá của thị trường và cộng thêm thu nhập từ việc cho thuê.
+
+Nhiệm vụ chi tiết:
+
+Trong lớp TraiPhieu:
+
+Hoàn thiện phương thức capNhatGiaTri() để cập nhật giá trị của trái phiếu sau một năm.
+
+Công thức: Giá trị hiện tại mới = Giá trị hiện tại cũ * (1 + lãi suất hàng năm).
+
+Trong lớp CoPhieu:
+
+Hoàn thiện phương thức capNhatGiaTri() để mô phỏng sự biến động giá trị của cổ phiếu.
+
+Logic:
+
+Tạo một số thực ngẫu nhiên trong khoảng [-1.0, 1.0] (biến động cơ sở).
+
+Tính tỉ lệ thay đổi = biến động cơ sở * mức độ rủi ro.
+
+Cập nhật giá trị theo công thức: Giá trị mới = Giá trị cũ * (1 + tỉ lệ thay đổi).
+
+Trong lớp BatDongSan:
+
+Hoàn thiện phương thức capNhatGiaTri() để tính toán giá trị bất động sản sau một năm.
+
+Logic (thực hiện tuần tự):
+
+Giá trị tài sản tăng lên theo thị trường: Giá trị sau tăng giá = Giá trị hiện tại * (1 + tỉ lệ tăng giá hàng năm).
+
+Cộng thêm tiền thu nhập từ cho thuê: Giá trị cuối cùng = Giá trị sau tăng giá + thu nhập thuê hàng năm.

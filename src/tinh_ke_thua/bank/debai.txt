@@ -1,0 +1,45 @@
+Đoạn mã này xây dựng một chương trình mô phỏng quản lý ngân hàng đơn giản, tập trung vào việc thể hiện các nguyên tắc cốt lõi của Lập trình Hướng đối tượng (OOP):
+
+Trừu tượng hóa (Abstraction): Lớp BankAccount là một lớp trừu tượng, định nghĩa các thuộc tính chung (số tài khoản, tên chủ tài khoản, số dư) và các hành vi chung (gửi tiền, rút tiền, tính lãi) mà mọi tài khoản ngân hàng phải có. Nó buộc các lớp con phải tự định nghĩa logic riêng cho việc rút tiền và tính lãi.
+
+Kế thừa (Inheritance):
+
+Lớp SavingsAccount (Tài khoản Tiết kiệm) kế thừa từ BankAccount và bổ sung thêm thuộc tính laiSuat (lãi suất).
+
+Lớp CheckingAccount (Tài khoản Vãng lai) cũng kế thừa từ BankAccount và bổ sung thuộc tính hanMucThauChi (hạn mức thấu chi).
+
+Đa hình (Polymorphism): Lớp NganHang quản lý một danh sách các đối tượng BankAccount. Khi gọi phương thức thucHienNghiepVuCuoiThang, nó duyệt qua danh sách và gọi tinhLaiHangThang() trên mỗi tài khoản. Java sẽ tự động xác định phiên bản phương thức nào cần thực thi (của SavingsAccount hay CheckingAccount) tại thời điểm chạy. Điều này cho phép xử lý các loại tài khoản khác nhau một cách thống nhất.
+
+Đóng gói (Encapsulation): Dữ liệu của mỗi tài khoản (như soDu) được bảo vệ và chỉ có thể được truy cập hoặc thay đổi thông qua các phương thức công khai (guiTien, rutTien
+
+Yêu cầu chi tiết:
+
+Bạn cần triển khai logic cho 4 phương thức sau:
+
+Trong lớp SavingsAccount - phương thức rutTien(double soTien):
+
+Chỉ cho phép rút tiền khi số tiền yêu cầu lớn hơn 0 và không vượt quá số dư hiện có.
+
+Nếu rút thành công, cập nhật lại số dư và trả về true.
+
+Nếu không, trả về false.
+
+Trong lớp SavingsAccount - phương thức tinhLaiHangThang():
+
+Tính tiền lãi hàng tháng theo công thức: Tiền lãi = Số dư * Lãi suất.
+
+Cộng tiền lãi vừa tính vào số dư của tài khoản.
+
+Trong lớp CheckingAccount - phương thức rutTien(double soTien):
+
+Cho phép rút tiền ngay cả khi số dư không đủ, miễn là số tiền rút không làm cho số dư âm vượt quá hạn mức thấu chi.
+
+Điều kiện rút thành công là: Số tiền rút <= (Số dư + Hạn mức thấu chi).
+
+Nếu rút thành công, cập nhật lại số dư (lúc này số dư có thể âm) và trả về true.
+
+Nếu không, trả về false.
+
+Trong lớp CheckingAccount - phương thức tinhLaiHangThang():
+
+Tài khoản này không được hưởng lãi suất. Phương thức chỉ cần in ra một thông báo để xác nhận điều này.

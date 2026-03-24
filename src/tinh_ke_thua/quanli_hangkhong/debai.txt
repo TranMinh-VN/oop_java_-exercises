@@ -1,0 +1,41 @@
+Bài toán này xây dựng một chương trình Java đơn giản để mô phỏng việc quản lý một đội bay của một hãng hàng không. Chương trình sử dụng các nguyên lý cốt lõi của lập trình hướng đối tượng (OOP) để quản lý các loại máy bay khác nhau, thực hiện các nghiệp vụ cơ bản và tính toán chi phí.
+
+Các khái niệm OOP được thể hiện như sau:
+
+Tính trừu tượng (Abstraction): Lớp Airplane là một lớp trừu tượng (abstract class), định nghĩa các thuộc tính chung (mã hiệu, tầm bay) và các hành vi chung (tinhChiPhiHoatDong, thucHienKiemTraAnNinh) mà mọi loại máy bay phải có. Nó không thể được khởi tạo trực tiếp mà đóng vai trò là một "khuôn mẫu".
+
+Tính kế thừa (Inheritance): Các lớp PassengerPlane (máy bay chở khách) và CargoPlane (máy bay chở hàng) kế thừa từ lớp Airplane. Chúng sở hữu các thuộc tính và phương thức của lớp cha, đồng thời có thêm các thuộc tính và hành vi riêng biệt (ví dụ: soGhe cho máy bay khách, taiTrongToiDa cho máy bay hàng).
+
+Tính đa hình (Polymorphism): Lớp HangHangKhong quản lý một danh sách các đối tượng Airplane. Khi gọi phương thức tinhChiPhiHoatDong() hoặc thucHienKiemTraAnNinh() trên mỗi đối tượng trong danh sách, phiên bản phương thức tương ứng của lớp con (PassengerPlane hay CargoPlane) sẽ được thực thi. Điều này cho phép xử lý các đối tượng khác nhau một cách thống nhất qua giao diện của lớp cha.
+
+Tính đóng gói (Encapsulation): Dữ liệu (thuộc tính) và các phương thức xử lý dữ liệu đó được đóng gói bên trong các lớp. Các thuộc tính được khai báo là private hoặc protected
+
+Chi tiết các yêu cầu:
+
+1. Đối với lớp PassengerPlane.java:
+
+Phương thức tinhChiPhiHoatDong(double quangDuong):
+
+Kiểm tra tầm bay: Nếu quangDuong lớn hơn tamBay của máy bay, in ra màn hình thông báo: CẢNH BÁO: Chuyến bay vượt tầm bay tối đa của [mã hiệu máy bay] và trả về giá trị 0.
+
+Tính toán chi phí: Nếu chuyến bay khả thi, tính toán và trả về tổng chi phí dựa trên công thức:Tổng chi phí = (Chi phí nhiên liệu mỗi km * Quãng đường) + (Chi phí phục vụ mỗi hành khách * Số ghế)
+
+Lưu ý: Sử dụng các hằng số CHI_PHI_NHIEN_LIEU_MOI_KM từ lớp cha Airplane và CHI_PHI_PHUC_VU_MOI_HANH_KHACH từ lớp PassengerPlane.
+
+Phương thức thucHienKiemTraAnNinh():
+
+In ra màn hình chính xác chuỗi sau (thay [mã hiệu máy bay] bằng mã hiệu thực tế):Máy bay [mã hiệu máy bay]: Đang thực hiện kiểm tra an ninh hành khách và soi chiếu hành lý.
+
+2. Đối với lớp CargoPlane.java:
+
+Phương thức tinhChiPhiHoatDong(double quangDuong):
+
+Kiểm tra tầm bay: Tương tự như máy bay chở khách, nếu quangDuong lớn hơn tamBay, in ra cảnh báo và trả về 0.
+
+Tính toán chi phí: Nếu chuyến bay khả thi, tính toán và trả về tổng chi phí dựa trên công thức:Tổng chi phí = (Chi phí nhiên liệu mỗi km * Quãng đường) + (Chi phí bốc xếp mỗi tấn * Tải trọng tối đa)
+
+Lưu ý: Sử dụng các hằng số CHI_PHI_NHIEN_LIEU_MOI_KM từ lớp cha Airplane và CHI_PHI_BOC_XEP_MOI_TAN từ lớp CargoPlane.
+
+Phương thức thucHienKiemTraAnNinh():
+
+In ra màn hình chính xác chuỗi sau (thay [mã hiệu máy bay] bằng mã hiệu thực tế):Máy bay [mã hiệu máy bay]: Đang thực hiện soi chiếu và niêm phong các container hàng hóa.

@@ -1,0 +1,38 @@
+Bộ mã nguồn này xây dựng một chương trình Java nhỏ để quản lý và thao tác với các đối tượng hình học 2D. Chương trình sử dụng các nguyên tắc cốt lõi của lập trình hướng đối tượng (OOP) như tính kế thừa, tính đa hình và lớp trừu tượng.
+
+Lớp trừu tượng HinhHoc2D: Đóng vai trò là lớp cha, định nghĩa một "khuôn mẫu" chung cho tất cả các hình học. Nó yêu cầu mọi hình con phải có khả năng dịch chuyển, quay, tính diện tích, và tính chu vi.
+
+Các lớp cụ thể (HinhTron, HinhChuNhat, HinhVuong): Các lớp này kế thừa từ HinhHoc2D và cung cấp cách triển khai cụ thể cho các hành vi trên. Ví dụ, cách tính diện tích hình tròn khác với hình chữ nhật. Đặc biệt, HinhVuong kế thừa từ HinhChuNhat để tái sử dụng mã nguồn, thể hiện mối quan hệ "là một" (hình vuông là một dạng đặc biệt của hình chữ nhật).
+
+Lớp quản lý BanVe: Lớp này chứa một danh sách các đối tượng HinhHoc2D. Nhờ tính đa hình, nó có thể quản lý nhiều loại hình khác nhau (tròn, chữ nhật, vuông) trong cùng một danh sách. Nó cung cấp các chức năng để thao tác trên tất cả các hình trong bản vẽ cùng lúc, chẳng hạn như dịch chuyển hoặc quay toàn bộ bản vẽ.
+
+Nhiệm vụ:
+
+Bạn được cung cấp một bộ mã nguồn Java gồm các lớp HinhHoc2D, HinhTron, HinhChuNhat, HinhVuong, BanVe, và Main. Nhiệm vụ của bạn là tìm và hoàn thiện phần logic còn thiếu trong các phương thức sau:
+
+File HinhTron.java:
+
+tinhDienTich(): Viết code để tính diện tích hình tròn dựa trên bán kính đã cho.
+
+File HinhChuNhat.java:
+
+tinhChuVi(): Viết code để tính chu vi hình chữ nhật dựa trên tọa độ hai đỉnh đối diện.
+
+quay(double goc): Viết code để thực hiện phép quay hình chữ nhật quanh tâm của nó một góc cho trước.
+
+File BanVe.java:
+
+tinhTongDienTich(): Viết code để tính tổng diện tích của tất cả các hình có trong bản vẽ.
+
+Kiểm tra:
+
+Sau khi hoàn thiện tất cả các phương thức trên, hãy chạy file Main.java.
+
+Chương trình của bạn được xem là đúng nếu nó có thể thực thi mà không gây ra lỗi và các kết quả in ra màn hình (diện tích, tọa độ sau khi dịch chuyển và quay) là hợp lý.
+
+Lưu ý:
+
+Không được thay đổi cấu trúc lớp, tên phương thức, hay các thuộc tính đã có sẵn.
+
+Hãy đọc kỹ các gợi ý đã được cung cấp trong phần bình luận (docstring) của mỗi phương thức.
+

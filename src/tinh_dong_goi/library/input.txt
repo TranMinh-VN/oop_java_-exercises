@@ -1,0 +1,16 @@
+// input.txt
+
+TACGIA
+TG01,Nguyễn Nhật Ánh
+TG02,J.K. Rowling
+TG03,Nam Cao
+SACH
+S001,Cho Tôi Xin Một Vé Đi Tuổi Thơ,TG01
+S002,Mắt Biếc,TG01
+S003,Harry Potter và Hòn Đá Phù Thủy,TG02
+S004,Lão Hạc,TG03
+S005,Harry Potter và Phòng Chứa Bí Mật,TG02
+DOCGIA
+DG01,Nguyễn Văn Nam
+DG02,Trần Thị Hoa
+DG03,Lê Thị Bình

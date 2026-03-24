@@ -1,0 +1,44 @@
+Bài toán mô phỏng một dịch vụ nghe nhạc đơn giản. Hệ thống này quản lý các thực thể cốt lõi bao gồm:
+
+BaiHat: Đại diện cho một bài hát với các thông tin như tên, nghệ sĩ và thời lượng.
+
+NgheSi: Đại diện cho nghệ sĩ trình bày bài hát.
+
+NguoiDung: Đại diện cho người dùng dịch vụ.
+
+Playlist: Là một danh sách các bài hát do người dùng tạo ra.
+
+Lớp DichVuAmNhac đóng vai trò là trung tâm điều phối, quản lý toàn bộ thư viện nhạc, danh sách người dùng và cung cấp các chức năng chính như tạo playlist, thêm bài hát vào playlist, phát nhạc và tìm kiếm. Lớp Main là nơi khởi tạo dữ liệu mẫu và mô phỏng các kịch bản sử dụng của người dùng trên dịch vụ.
+
+Mục tiêu của bài toán là xây dựng một mô hình hướng đối tượng để quản lý các tương tác trong một ứng dụng âm nhạc.
+
+YÊU CẦU BÀI TẬP
+
+Dựa trên cấu trúc mã nguồn đã được cung cấp cho một dịch vụ nghe nhạc đơn giản, bạn hãy hoàn thiện phần logic còn thiếu cho 2 phương thức sau đây:
+
+1. Hoàn thiện phương thức tinhTongThoiLuong() trong file Playlist.java:
+
+Mục tiêu: Viết mã để tính tổng thời lượng của tất cả các bài hát có trong một playlist.
+
+Yêu cầu chi tiết:
+
+Phương thức phải duyệt qua danh sách danhSachBaiHat của playlist.
+
+Tính tổng giá trị của thuộc tính thoiLuongGiay từ mỗi đối tượng BaiHat.
+
+Phương thức phải trả về một số nguyên (int) là tổng thời lượng tính bằng giây.
+
+2. Hoàn thiện phương thức timKiemBaiHat() trong file DichVuAmNhac.java:
+
+Mục tiêu: Viết mã để tìm kiếm các bài hát trong thư viện (thuVienBaiHat) dựa trên một từ khóa.
+
+Yêu cầu chi tiết:
+
+Phương thức phải tìm kiếm dựa trên cả tên bài hát và tên nghệ sĩ.
+
+Việc tìm kiếm phải không phân biệt chữ hoa và chữ thường (ví dụ: tìm "anh" sẽ thấy "Hãy Trao Cho Anh").
+
+Nếu tên bài hát hoặc tên nghệ sĩ chứa từ khóa, bài hát đó được coi là khớp.
+
+Phương thức phải trả về một List<BaiHat> chứa tất cả các bài hát khớp với điều kiện tìm kiếm. Nếu không có bài hát nào phù hợp, trả về một danh sách rỗng.
+

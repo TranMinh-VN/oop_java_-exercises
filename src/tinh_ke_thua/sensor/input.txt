@@ -1,0 +1,28 @@
+# Dữ liệu cho Cảm biến Nhiệt độ
+TEMP_ID: TEMP01
+TEMP_LOCATION: Sân thượng
+# Dùng để test trường hợp nhiệt độ rất cao
+TEMP_CELSIUS_HIGH: 39.5
+# Dùng để test trường hợp nhiệt độ rất thấp
+TEMP_CELSIUS_LOW: 4.0
+# Dùng để test trường hợp nhiệt độ bình thường
+TEMP_CELSIUS_NORMAL: 25.0
+
+# Dữ liệu cho Cảm biến Độ ẩm
+HUMIDITY_ID: HUM01
+HUMIDITY_LOCATION: Trong nhà
+# Dùng để test trường hợp "Khô"
+HUMIDITY_DRY: 25.0
+# Dùng để test trường hợp "Lý tưởng"
+HUMIDITY_IDEAL: 50.0
+# Dùng để test trường hợp "Ẩm ướt"
+HUMIDITY_WET: 75.0
+
+# Dữ liệu cho Cảm biến Gió
+WIND_ID: WIND01
+WIND_LOCATION: Nóc nhà
+WIND_DIRECTION: Tây Nam
+# Dùng để test các mức gió khác nhau cho hàm getBeaufortDescription
+WIND_SPEED_CALM: 0.5
+WIND_SPEED_WEAK: 15.0
+WIND_SPEED_STORM: 90.0

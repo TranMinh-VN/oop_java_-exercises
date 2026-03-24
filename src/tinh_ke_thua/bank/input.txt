@@ -1,0 +1,31 @@
+# Dữ liệu cho SavingsAccount.rutTien
+SAVINGS
+TK001
+Nguyen Van An
+50000000
+0.06
+10000000
+60000000
+
+# Dữ liệu cho SavingsAccount.tinhLaiHangThang
+SAVINGS
+TK001
+Nguyen Van An
+50000000
+0.06
+
+# Dữ liệu cho CheckingAccount.rutTien
+CHECKING
+TK002
+Tran Thi Binh
+10000000
+20000000
+25000000
+40000000
+
+# Dữ liệu cho CheckingAccount.tinhLaiHangThang
+CHECKING
+TK002
+Tran Thi Binh
+10000000
+20000000

@@ -1,0 +1,81 @@
+Đoạn code xây dựng một Hệ thống Quản lý Nhân sự (HRM) đơn giản cho một công ty. Hệ thống này được thiết kế để quản lý các thực thể cốt lõi và thực hiện các nghiệp vụ nhân sự cơ bản.
+
+Các chức năng chính của hệ thống bao gồm:
+
+Quản lý Cơ cấu tổ chức:
+
+Hệ thống cho phép tạo và quản lý các Phòng ban (PhongBan), mỗi phòng có mã, tên, danh sách nhân viên và một trưởng phòng.
+
+Quản lý Nhân viên:
+
+Quản lý thông tin cá nhân của Nhân viên (NhanVien) như mã nhân viên, họ tên, ngày sinh.
+
+Mỗi nhân viên được liên kết với một phòng ban cụ thể và có một Hợp đồng lao động (HopDongLaoDong).
+
+Quản lý Hợp đồng và Vị trí:
+
+Hợp đồng lao động gắn một nhân viên với một Vị trí công việc (ViTriCongViec) và mức lương thỏa thuận.
+
+Các vị trí công việc (Nhân viên, Trưởng phòng, Giám đốc) có hệ số lương riêng để xác định thu nhập cuối cùng.
+
+Thực hiện các Nghiệp vụ Nhân sự:
+
+Tuyển dụng: Hệ thống có quy trình để tuyển dụng một nhân viên mới, tự động tạo mã nhân viên, tạo hợp đồng và thêm nhân viên vào phòng ban tương ứng.
+
+Bổ nhiệm: Cho phép bổ nhiệm một nhân viên làm trưởng phòng, với các quy tắc kiểm tra tính hợp lệ (ví dụ: nhân viên phải thuộc phòng ban đó).
+
+Tính lương: Cung cấp chức năng tính lương tháng cho nhân viên dựa trên lương thỏa thuận trong hợp đồng và hệ số lương của vị trí công việc.
+
+Báo cáo: Hiển thị thông tin chi tiết của một phòng ban, bao gồm trưởng phòng và danh sách nhân viên.
+
+YÊU CẦU BÀI TẬP: HOÀN THIỆN HỆ THỐNG QUẢN LÝ NHÂN SỰ
+
+Dựa trên cấu trúc dự án đã cho, em hãy hoàn thiện các phương thức nghiệp vụ còn thiếu trong lớp HeThongQuanLyNhanSu.java. Các phương thức cần hoàn thiện được đánh dấu bằng // TODO.
+
+Chi tiết các yêu cầu:
+
+Hoàn thiện hàm timPhongBanTheoMa(String maPhongBan):
+
+Mục tiêu: Tìm và trả về một đối tượng PhongBan từ danh sách các phòng ban dựa trên mã được cung cấp.
+
+Logic:
+
+Duyệt qua danh sách danhSachPhongBan.
+
+Với mỗi phòng ban, so sánh mã của nó với tham số maPhongBan (không phân biệt chữ hoa, chữ thường).
+
+Nếu tìm thấy, trả về đối tượng PhongBan đó.
+
+Nếu duyệt hết danh sách mà không tìm thấy, trả về null.
+
+Hoàn thiện hàm boNhiemTruongPhong(NhanVien nhanVien, PhongBan phongBan):
+
+Mục tiêu: Bổ nhiệm một nhân viên làm trưởng phòng.
+
+Logic:
+
+Kiểm tra tính hợp lệ:
+
+Đảm bảo rằng hai tham số nhanVien và phongBan không phải là null.
+
+Kiểm tra xem nhanVien có thực sự là thành viên trong phongBan hay không.
+
+Nếu tất cả các điều kiện trên đều thỏa mãn, hãy gọi phương thức setTruongPhong() của đối tượng phongBan để gán nhân viên làm trưởng phòng và in thông báo thành công.
+
+Nếu không, in ra thông báo lỗi bổ nhiệm.
+
+Hoàn thiện hàm tinhLuongThang(NhanVien nv):
+
+Mục tiêu: Tính lương tháng thực nhận cho một nhân viên.
+
+Logic:
+
+Công thức tính lương: Lương tháng = Lương thỏa thuận × Hệ số lương.
+
+Kiểm tra xem đối tượng nv và hợp đồng lao động của nhân viên đó (nv.getHopDong()) có tồn tại không. Nếu không, trả về 0.
+
+Lấy ra mức lương thỏa thuận từ hợp đồng.
+
+Lấy ra hệ số lương từ vị trí công việc trong hợp đồng.
+
+Trả về kết quả của phép tính trên.

@@ -1,0 +1,37 @@
+Mã nguồn này mô phỏng một hệ thống quản lý đơn giản cho một cửa hàng văn phòng phẩm. Hệ thống có các chức năng chính sau:
+
+Quản lý Sản phẩm: Cho phép định nghĩa các mặt hàng (Sản phẩm) với các thuộc tính như mã, tên, giá bán, số lượng tồn kho và loại sản phẩm (Bút, Sổ, Dụng cụ khác).
+
+Quản lý Kho hàng: Cửa hàng có một "kho" để lưu trữ tất cả sản phẩm đang kinh doanh. Hệ thống có thể cập nhật số lượng tồn kho khi hàng được bán ra.
+
+Quản lý Khách hàng: Cho phép đăng ký thông tin khách hàng. Mỗi khách hàng có một Giỏ hàng (GioHang) riêng biệt để chứa các sản phẩm họ muốn mua.
+
+Quy trình Mua sắm: Khách hàng có thể thêm sản phẩm với số lượng mong muốn vào giỏ hàng của mình.
+
+Quy trình Thanh toán: Hệ thống xử lý việc thanh toán giỏ hàng. Quá trình này sẽ kiểm tra xem số lượng hàng trong kho có đủ đáp ứng yêu cầu của khách không.
+
+Nếu đủ hàng, giao dịch thành công, số lượng tồn kho của sản phẩm tương ứng sẽ được giảm đi, một Hóa đơn (HoaDon) được tạo ra và giỏ hàng của khách được xóa sạch.
+
+Nếu không đủ hàng, giao dịch thất bại và không có thay đổi nào xảy ra với kho hàng.
+
+Báo cáo: Hệ thống có thể in ra báo cáo tồn kho tại bất kỳ thời điểm nào.
+
+Yêu cầu: Hoàn thiện logic cho 3 phương thức còn thiếu trong dự án Quản lý Cửa hàng Văn phòng phẩm:
+
+Trong file SanPham.java:
+
+Hoàn thiện phương thức giamSoLuongTon(int soLuong).
+
+Mục tiêu: Phương thức phải kiểm tra xem số lượng yêu cầu có hợp lệ và có đủ hàng trong kho không. Nếu đủ, phương thức thực hiện trừ vào số lượng tồn kho và trả về true. Ngược lại, trả về false.
+
+Trong file GioHang.java:
+
+Hoàn thiện phương thức tinhTongTien().
+
+Mục tiêu: Phương thức phải tính chính xác tổng giá trị của tất cả các mặt hàng trong giỏ bằng cách lặp qua danh sách sản phẩm, nhân đơn giá với số lượng của từng mặt hàng rồi cộng dồn lại.
+
+Trong file CuaHangVanPhongPham.java:
+
+Hoàn thiện phương thức timSanPhamTheoMa(String maSP).
+
+Mục tiêu: Phương thức phải tìm và trả về đúng đối tượng SanPham từ khoHang có mã trùng với mã được cung cấp (không phân biệt hoa-thường). Nếu không tìm thấy, phải trả về null.

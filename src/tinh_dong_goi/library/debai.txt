@@ -1,0 +1,78 @@
+Đoạn mã xây dựng một Hệ thống Quản lý Thư viện đơn giản bằng Java. Hệ thống này mô phỏng các hoạt động cốt lõi của một thư viện, bao gồm:
+
+Quản lý các thực thể chính:
+
+Sách (Sach): Mỗi cuốn sách có ID, tiêu đề, tác giả và trạng thái (có sẵn hoặc đang được mượn).
+
+Độc giả (DocGia): Mỗi độc giả có ID, tên và một danh sách các cuốn sách họ đang mượn.
+
+Tác giả (TacGia): Lưu thông tin cơ bản về tác giả.
+
+Phiếu mượn (PhieuMuon): Ghi lại thông tin một lần mượn sách, liên kết một cuốn sách với một độc giả, bao gồm ngày mượn và ngày dự kiến trả.
+
+Thực hiện các nghiệp vụ thư viện:
+
+Cho mượn sách: Hệ thống kiểm tra xem sách có tồn tại không, độc giả có hợp lệ không và sách có đang sẵn sàng để cho mượn không. Nếu mọi điều kiện đều thỏa mãn, hệ thống sẽ tạo một phiếu mượn mới và cập nhật trạng thái của sách và độc giả.
+
+Nhận trả sách: Khi một cuốn sách được trả lại, hệ thống cập nhật trạng thái của sách thành "Có sẵn" và xóa phiếu mượn tương ứng khỏi danh sách của độc giả và của thư viện.
+
+Báo cáo: Hệ thống có khả năng liệt kê tất cả các sách đang bị mượn quá hạn.
+
+YÊU CẦU BÀI TẬP: HOÀN THIỆN HỆ THỐNG QUẢN LÝ THƯ VIỆN
+
+Bạn được cung cấp một bộ mã nguồn Java cho hệ thống quản lý thư viện cơ bản. Các lớp thực thể như Sach, DocGia, PhieuMuon đã được định nghĩa sẵn. Nhiệm vụ của bạn là hoàn thiện các logic nghiệp vụ chính còn thiếu trong lớp ThuVien.java.
+
+Nhiệm vụ cụ thể:
+
+Bạn cần phải triển khai phần thân (body) cho 3 phương thức sau trong lớp ThuVien:
+
+public static PhieuMuon choMuonSach(String idSach, String idDocGia)
+
+Mục tiêu: Xử lý yêu cầu mượn sách từ một độc giả.
+
+Các bước cần thực hiện:
+
+Tìm kiếm sách và độc giả trong cơ sở dữ liệu (các ArrayList) của thư viện dựa trên ID được cung cấp.
+
+Kiểm tra tính hợp lệ của yêu cầu: Sách phải tồn tại, độc giả phải tồn tại, và sách phải ở trạng thái "Có sẵn".
+
+Nếu không hợp lệ, phải in ra thông báo lỗi tương ứng và trả về null.
+
+Nếu hợp lệ, tiến hành tạo một phiếu mượn mới, cập nhật trạng thái của sách thành "Đang được mượn", và thêm phiếu mượn vào danh sách quản lý của cả độc giả và thư viện.
+
+Trả về phiếu mượn đã được tạo.
+
+public static void nhanTraSach(PhieuMuon phieu)
+
+Mục tiêu: Xử lý việc một độc giả trả lại sách.
+
+Các bước cần thực hiện:
+
+Cập nhật trạng thái của cuốn sách được trả về "Có sẵn".
+
+Xóa phiếu mượn tương ứng khỏi danh sách sách đang mượn của độc giả.
+
+Xóa phiếu mượn khỏi danh sách các phiếu đang hoạt động của thư viện.
+
+Kiểm tra xem sách có bị trả trễ hạn hay không và đưa ra cảnh báo nếu cần.
+
+public static void lietKeSachQuaHan()
+
+Mục tiêu: Tạo một báo cáo liệt kê tất cả các sách đang được mượn nhưng đã quá hạn trả.
+
+Các bước cần thực hiện:
+
+Duyệt qua tất cả các phiếu mượn đang hoạt động của thư viện.
+
+Đối với mỗi phiếu, sử dụng phương thức isQuaHan() để xác định tình trạng.
+
+In thông tin của những phiếu mượn đã quá hạn ra màn hình.
+
+Trong trường hợp không có sách nào quá hạn, in ra một thông báo xác nhận điều đó.
+
+Hướng dẫn:
+
+Đọc kỹ các bình luận (docstring) trong từng phương thức để hiểu rõ yêu cầu chi tiết.
+
+Sử dụng lớp Main.java có sẵn để chạy thử và kiểm tra kết quả sau khi bạn hoàn thiện code. Chương trình Main đã mô phỏng sẵn các kịch bản mượn/trả sách.
+

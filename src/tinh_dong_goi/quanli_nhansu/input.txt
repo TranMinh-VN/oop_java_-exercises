@@ -1,0 +1,10 @@
+# Dữ liệu cho hệ thống quản lý nhân sự
+# Định nghĩa các phòng ban
+PHONGBAN,KD,Phòng Kinh doanh
+PHONGBAN,KT,Phòng Kỹ thuật
+
+# Định nghĩa các nhân viên ban đầu
+NHANVIEN,Lê An,1995-05-20,KD,NHAN_VIEN,10000000
+NHANVIEN,Trần Bình,1992-08-15,KD,NHAN_VIEN,12000000
+NHANVIEN,Phạm Cường,1990-01-10,KT,NHAN_VIEN,15000000
+NHANVIEN,Vũ Dũng,1988-11-30,KT,NHAN_VIEN,18000000

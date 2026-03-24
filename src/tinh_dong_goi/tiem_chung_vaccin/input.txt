@@ -1,0 +1,13 @@
+#NGUOIDAN
+001,Nguyễn Văn An,30,Hà Nội
+002,Trần Thị Bình,25,TP.HCM
+003,Lê Văn Cường,40,Đà Nẵng
+
+#TRUNGTAM
+TT01,Trung tâm Y tế Quận 1,123 Nguyễn Du Q1 TP.HCM
+TT02,Bệnh viện Đống Đa,56 Nguyễn Lương Bằng Đống Đa Hà Nội
+
+#KHOVACCINE
+TT01,PFIZER,1
+TT01,MODERNA,10
+TT02,ASTRAZENECA,20

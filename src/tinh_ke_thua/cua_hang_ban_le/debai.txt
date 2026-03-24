@@ -1,0 +1,45 @@
+Đoạn mã này mô phỏng một hệ thống quản lý sản phẩm và giỏ hàng đơn giản trong một cửa hàng bán lẻ. Hệ thống được xây dựng dựa trên các nguyên tắc của lập trình hướng đối tượng, cụ thể là tính kế thừa và tính đa hình.
+
+Luồng hoạt động chính:
+
+Lớp Product (Sản phẩm): Là một lớp trừu tượng, đóng vai trò là "khuôn mẫu" chung cho tất cả các loại sản phẩm. Nó định nghĩa các thuộc tính cơ bản như mã sản phẩm, tên, giá gốc và một phương thức trừu tượng là getFinalPrice(). Việc này bắt buộc mọi loại sản phẩm cụ thể phải có cách tính giá bán cuối cùng của riêng mình.
+
+Các lớp con:
+
+FoodItem (Thực phẩm): Kế thừa từ Product, được miễn thuế.
+
+ElectronicsItem (Đồ điện tử): Kế thừa từ Product, chịu thuế VAT 10%.
+
+ClothingItem (Quần áo): Kế thừa từ Product, chịu thuế VAT 8% và có thể được giảm giá.
+
+Lớp ShoppingCart (Giỏ hàng): Quản lý một danh sách các đối tượng Product. Điểm mấu chốt của bài toán nằm ở phương thức checkout(). Khi phương thức này duyệt qua danh sách sản phẩm và gọi item.getFinalPrice(), Java sẽ tự động gọi đến phương thức getFinalPrice() của lớp con tương ứng (Thực phẩm, Đồ điện tử, hay Quần áo). Đây chính là tính đa hình đang được áp dụng, giúp cho việc tính toán hóa đơn trở nên linh hoạt và dễ mở rộng.
+
+Yêu cầu: Hoàn thiện các phương thức được đánh dấu // TODO trong các file mã nguồn đã cho để chương trình hoạt động đúng. Cụ thể:
+
+Trong file FoodItem.java:
+
+Hoàn thiện phương thức getFinalPrice() để trả về giá bán cuối cùng. Theo quy định, mặt hàng thực phẩm được miễn thuế nên giá cuối cùng bằng giá gốc.
+
+Trong file ElectronicsItem.java:
+
+Hoàn thiện phương thức getFinalPrice() để tính và trả về giá bán sau thuế. Mặt hàng điện tử chịu thuế VAT 10%.
+
+Công thức: Giá cuối = Giá gốc * (1 + 0.10)
+
+Trong file ClothingItem.java:
+
+Hoàn thiện phương thức getFinalPrice() để tính giá bán sau khi áp dụng thuế và giảm giá. Mặt hàng quần áo chịu thuế VAT 8% rồi mới được áp dụng giảm giá.
+
+Công thức: Giá cuối = (Giá gốc * (1 + 0.08)) * (1 - tỉ lệ giảm giá)
+
+Trong file ShoppingCart.java:
+
+Hoàn thiện phương thức checkout() để thực hiện quy trình thanh toán:
+
+Duyệt qua tất cả sản phẩm có trong giỏ hàng.
+
+Với mỗi sản phẩm, lấy giá cuối cùng (bằng cách gọi getFinalPrice()) và in thông tin chi tiết của sản phẩm đó ra màn hình.
+
+Tính tổng số tiền của tất cả sản phẩm trong giỏ.
+
+In tổng số tiền cuối cùng mà khách hàng phải trả.

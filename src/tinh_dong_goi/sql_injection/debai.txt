@@ -1,0 +1,45 @@
+Đoạn mã Java này mô phỏng một kịch bản tấn công SQL Injection vào chức năng đăng nhập của một ứng dụng web. Mục tiêu là để minh họa sự khác biệt về mức độ bảo mật giữa hai cách xây dựng truy vấn cơ sở dữ liệu:
+
+Cách làm nguy hiểm (Vulnerable): Xây dựng câu lệnh SQL bằng cách nối chuỗi trực tiếp từ đầu vào của người dùng. Cách làm này mở ra lỗ hổng cho phép kẻ tấn công thay đổi logic của câu lệnh SQL.
+
+Cách làm an toàn (Secure): Sử dụng cơ chế tham số hóa truy vấn (mô phỏng Prepared Statements). Với cách này, dữ liệu đầu vào của người dùng luôn được coi là giá trị (data) chứ không bao giờ bị nhầm lẫn là một phần của câu lệnh (code), do đó ngăn chặn được tấn công SQL Injection.
+
+Chương trình thực hiện 3 kịch bản chính:
+
+Đăng nhập hợp lệ bằng cả hai phương thức.
+
+Tấn công SQL Injection vào phương thức nguy hiểm, kết quả là kẻ tấn công có thể bypass màn hình đăng nhập và lấy được toàn bộ dữ liệu người dùng.
+
+Tấn công SQL Injection vào phương thức an toàn, kết quả là cuộc tấn công thất bại hoàn toàn.
+
+Nhiệm vụ: Bạn được cung cấp một bộ mã nguồn Java mô phỏng chức năng đăng nhập. Nhiệm vụ của bạn là hoàn thiện 2 hàm còn thiếu để chương trình có thể chạy đúng các kịch bản được mô tả.
+
+Nhiệm vụ 1: Hoàn thiện hàm vulnerableLogin trong file Main.java
+
+Mục đích: Viết code tạo ra một câu truy vấn SQL bằng cách nối chuỗi trực tiếp. Đây chính là cách làm phát sinh ra lỗ hổng.
+
+Yêu cầu:
+
+Tạo một biến chuỗi query.
+
+Nối các chuỗi lại với nhau để tạo thành câu lệnh có cấu trúc: SELECT * FROM users WHERE username = 'USERNAME_INPUT' AND password = 'PASSWORD_INPUT'
+
+Thay thế USERNAME_INPUT và PASSWORD_INPUT bằng các giá trị được truyền vào qua tham số của hàm.
+
+Gọi hàm SimulatedDatabase.executeVulnerableQuery() với chuỗi query bạn vừa tạo và trả về kết quả.
+
+Nhiệm vụ 2: Hoàn thiện hàm executeSecureQuery trong file SimulatedDatabase.java
+
+Mục đích: Viết code mô phỏng lại cách một hệ quản trị CSDL thực thi truy vấn một cách an toàn khi nhận được lệnh và tham số riêng biệt.
+
+Yêu cầu:
+
+Lấy giá trị username và password từ mảng tham số params.
+
+Duyệt qua toàn bộ danh sách người dùng có trong userTable.
+
+So sánh trực tiếp (sử dụng .equals()) giá trị username/password từ params với username/password của từng người dùng trong userTable.
+
+Nếu tìm thấy người dùng khớp, thêm người dùng đó vào danh sách kết quả.
+
+Trả về danh sách kết quả. Tuyệt đối không được ghép các giá trị trong params vào chuỗi câu lệnh.
