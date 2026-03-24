@@ -1,0 +1,42 @@
+Phát biểu problem
+Polycarp thích chơi trò chơi nhập vai trên máy tính «Lizards and Basements». Hiện tại cậu ấy đang chơi với vai trò là một pháp sư. Ở một trong những cấp độ cuối cùng, cậu ấy phải chiến đấu với một hàng cung thủ. Phép thuật duy nhất mà cậu ấy có thể dùng để gây sát thương cho chúng là cầu lửa. Nếu Polycarp ném cầu lửa trúng cung thủ thứ $i$ (chúng được đánh số từ trái sang phải), cung thủ đó sẽ mất $a$ điểm máu. Đồng thời, phép thuật này cũng gây sát thương cho các cung thủ kề cạnh cung thủ thứ $i$ (nếu có) — mỗi người mất $b$ ($1 \le b < a \le 10$) điểm máu.
+
+Vì các cung thủ ở ngoài cùng (tức là cung thủ số 1 và $n$) ở rất xa, cầu lửa không thể bay tới chỗ họ. Polycarp có thể ném cầu lửa vào bất kỳ cung thủ nào khác (từ $2$ đến $n-1$).
+
+Số lượng điểm máu của mỗi cung thủ đã được biết. Một cung thủ sẽ bị tiêu diệt khi lượng máu này nhỏ hơn 0. Số lượng phép thuật tối thiểu mà Polycarp cần sử dụng để tiêu diệt tất cả kẻ thù là bao nhiêu?
+
+Polycarp có thể ném cầu lửa vào một cung thủ ngay cả khi người đó đã bị tiêu diệt.
+
+Input
+Dòng đầu tiên của đầu vào chứa ba số nguyên $n, a, b$ ($3 \le n \le 10; 1 \le b < a \le 10$). Dòng thứ hai chứa một dãy $n$ số nguyên — $h_1, h_2, \dots, h_n$ ($1 \le h_i \le 15$), trong đó $h_i$ là số lượng điểm máu của cung thủ thứ $i$.
+
+Output
+Dòng đầu tiên in ra $t$ — số lượng cầu lửa tối thiểu cần thiết. Dòng thứ hai in ra $t$ số — chỉ số của các cung thủ mà Polycarp nên ném trúng để tiêu diệt tất cả các cung thủ trong $t$ lần bắn. Tất cả các số này phải nằm trong khoảng từ 2 đến $n-1$. Phân tách các số bằng dấu cách. Nếu có nhiều giải pháp, in ra bất kỳ giải pháp nào. In các số theo bất kỳ thứ tự nào.
+
+Các ví dụ
+Input
+
+3 2 1
+2 2 2
+Output
+
+3
+2 2 2
+Input
+
+4 3 1
+1 4 1 1
+Output
+
+4
+2 2 3 3
+Giải thích ví dụ
+Ví dụ 1: Có 3 cung thủ, máu lần lượt là 2, 2, 2.
+Sát thương trực tiếp $a=2$, lan $b=1$.
+Chỉ có thể bắn vào cung thủ số 2.
+Bắn lần 1 vào 2: Máu còn 1, 0, 1. (Chưa chết vì phải < 0).
+Bắn lần 2 vào 2: Máu còn 0, -2, 0. (Vẫn chưa chết hết).
+Bắn lần 3 vào 2: Máu còn -1, -4, -1. (Tất cả đều < 0 -> Chết hết).
+Tổng cộng 3 lần bắn vào vị trí 2.
+Ví dụ 2: 4 cung thủ, máu 1, 4, 1, 1. $a=3, b=1$.
+Bắn 2 lần vào vị trí 2, 2 lần vào vị trí 3 sẽ tiêu diệt hết.

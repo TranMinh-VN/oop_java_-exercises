@@ -1,0 +1,25 @@
+# === GIAI ĐOẠN 1: KHỞI TẠO DỮ LIỆU ===
+# Cú pháp: CREATE <LOẠI_TK> <SỐ_TK> "<TÊN_CHỦ_TK>" <SỐ_DƯ> <LÃI_SUẤT/HẠN_MỨC>
+CREATE SAVINGS S001 "Nguyễn Văn A" 5000000 0.06
+CREATE CURRENT C002 "Trần Thị B" 2000000 10000000
+
+# === GIAI ĐOẠN 2: HIỂN THỊ THÔNG TIN BAN ĐẦU ===
+DISPLAY_ALL
+
+# === GIAI ĐOẠN 3: MÔ PHỎNG CÁC GIAO DỊCH ===
+
+# --- Giao dịch trên tài khoản tiết kiệm S001 ---
+DEPOSIT S001 1000000
+WITHDRAW S001 2000000
+# Thử rút tiền quá số dư
+WITHDRAW S001 5000000
+
+# --- Giao dịch trên tài khoản vãng lai C002 ---
+DEPOSIT C002 3000000
+# Thử rút tiền sử dụng thấu chi
+WITHDRAW C002 6000000
+# Thử rút tiền vượt quá hạn mức thấu chi
+WITHDRAW C002 10000000
+
+# === GIAI ĐOẠN 4: HIỂN THỊ THÔNG TIN CUỐI CÙNG ===
+DISPLAY_ALL

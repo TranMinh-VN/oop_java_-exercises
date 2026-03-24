@@ -1,0 +1,67 @@
+1. Lớp Employee (lớp trừu tượng)
+Thuộc tính:
+
+id (tự động tăng dần)
+
+name
+
+baseSalary
+
+Phương thức:
+
+calculateSalary() – trừu tượng
+
+getWorkReport() – trừu tượng
+
+toString() – in thông tin nhân viên dạng:
+
+ID: 1, Name: Alice, Calculated Salary: $8500.00
+2. Lớp Manager (kế thừa Employee)
+Thuộc tính:
+
+bonus (thưởng)
+
+Phương thức:
+
+calculateSalary() = baseSalary + bonus
+
+getWorkReport() – trả về chuỗi:
+
+Manager Alice is managing the team and projects.
+3. Lớp Developer (kế thừa Employee)
+Thuộc tính:
+
+overtimeHours (giờ làm thêm)
+
+hourlyRate (lương theo giờ làm thêm)
+
+Phương thức:
+
+calculateSalary() = baseSalary + (overtimeHours * hourlyRate)
+
+getWorkReport() – trả về chuỗi:
+
+Developer Bob is writing code and fixing bugs.
+4. Lớp Company
+Thuộc tính:
+
+companyName
+
+employees[] – mảng nhân viên
+
+employeeCount – số nhân viên hiện có
+
+Các phương thức cần hoàn thiện:
+
+getTotalPayroll()
+Tính tổng lương của tất cả nhân viên (dùng calculateSalary()).
+
+findHighestPaidEmployee()
+Tìm và trả về nhân viên có lương cao nhất.
+
+Nếu công ty chưa có nhân viên → trả về null.
+
+generateWorkReports()
+In tiêu đề báo cáo.
+
+Dùng vòng lặp gọi getWorkReport() cho từng nhân viên.

@@ -1,0 +1,48 @@
+Mô tả bài toán
+Hầu như mọi trình soạn thảo văn bản đều có chức năng căn giữa văn bản tích hợp sẵn. Các nhà phát triển của trình soạn thảo văn bản phổ biến ở Berland là «Textpad» đã quyết định đưa chức năng này vào bản phát hành thứ tư của sản phẩm.
+
+Bạn phải thực hiện việc căn chỉnh trong thời gian ngắn nhất có thể. Chúc may mắn!
+
+Đầu vào
+Tệp đầu vào bao gồm một hoặc nhiều dòng, mỗi dòng chứa các chữ cái Latinh, chữ số và/hoặc dấu cách. Các dòng không thể bắt đầu hoặc kết thúc bằng dấu cách. Đảm bảo rằng ít nhất một trong các dòng có độ dài dương. Độ dài của mỗi dòng và tổng số lượng các dòng không vượt quá 1000.
+
+Đầu ra
+Định dạng văn bản đã cho, căn giữa nó. Đóng khung toàn bộ văn bản bằng các ký tự «*» với kích thước tối thiểu. Nếu một dòng không thể được căn chỉnh hoàn hảo (ví dụ: dòng có độ dài chẵn, trong khi chiều rộng của khối là lẻ), bạn nên đặt các dòng như vậy bằng cách làm tròn xuống khoảng cách đến cạnh trái hoặc cạnh phải và đưa chúng đến gần bên trái hoặc bên phải một cách xen kẽ (bạn nên bắt đầu bằng cách đưa về bên trái). Hãy nghiên cứu kỹ các ví dụ mẫu để hiểu rõ hơn về định dạng đầu ra.
+
+Examples
+Example 1
+Input
+This is
+
+Harito Hai
+Beta
+Round
+5
+Output
+************
+* This  is *
+*          *
+*Harito Hai*
+*   Beta   *
+*  Round   *
+*     5    *
+************
+Example 2
+Input
+welcome to the
+Harito Hai
+Beta
+Round 5
+
+and
+good luck
+Output
+****************
+*welcome to the*
+*  Harito Hai  *
+*     Beta     *
+*   Round 5    *
+*              *
+*      and     *
+*  good luck   *
+****************

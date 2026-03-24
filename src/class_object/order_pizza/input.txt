@@ -1,0 +1,14 @@
+# Dữ liệu để tạo đơn hàng pizza
+# Dòng bắt đầu bằng '#' sẽ được bỏ qua
+
+# Bước 1: Thông tin đơn hàng
+ORDER_ID: 101
+
+# Bước 2: Thêm pizza thứ nhất và các topping của nó
+PIZZA: Hải sản, M
+TOPPING: Phô mai
+TOPPING: Nấm
+
+# Bước 3: Thêm pizza thứ hai và topping của nó
+PIZZA: Thập cẩm, L
+TOPPING: Xúc xích

@@ -1,0 +1,48 @@
+# Các dòng bắt đầu bằng '#' sẽ được bỏ qua
+# Định dạng lệnh: LỆNH [tham_số]
+
+SCENARIO KỊCH BẢN 1: MUA HÀNG THÀNH CÔNG
+DISPLAY
+SELECT Coke
+INSERT 10000
+EXECUTE
+
+SCENARIO KỊCH BẢN 2: KHÔNG ĐỦ TIỀN & TIỀN KHÔNG HỢP LỆ
+DISPLAY
+SELECT Pepsi
+INSERT 5000
+EXECUTE
+# Thử bỏ tiền không hợp lệ
+INSERT 3000
+# Bỏ thêm tiền hợp lệ để mua
+INSERT 5000
+EXECUTE
+
+SCENARIO KỊCH BẢN 3: HỦY GIAO DỊCH
+DISPLAY
+SELECT Snack
+INSERT 2000
+CANCEL
+
+SCENARIO KỊCH BẢN 4: MUA HẾT HÀNG (Mỗi lần mua một món)
+# Máy có 5 món Snack ban đầu
+SELECT Snack
+INSERT 5000
+EXECUTE
+SELECT Snack
+INSERT 5000
+EXECUTE
+SELECT Snack
+INSERT 5000
+EXECUTE
+SELECT Snack
+INSERT 5000
+EXECUTE
+SELECT Snack
+INSERT 5000
+EXECUTE
+# Thử mua lần thứ 6 để kiểm tra lỗi hết hàng
+SELECT Snack
+
+SCENARIO KẾT THÚC: HIỂN THỊ LẠI KHO HÀNG
+DISPLAY

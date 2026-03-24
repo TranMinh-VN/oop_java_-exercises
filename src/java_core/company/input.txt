@@ -1,0 +1,5 @@
+Manager;Alice;7000;1500
+Developer;Bob;5000;20;25
+Developer;Charlie;5500;10;30
+Manager;Diana;8000;2000
+Developer;Eve;4800;30;22

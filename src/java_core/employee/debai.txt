@@ -1,0 +1,30 @@
+BÀI TẬP: XÂY DỰNG LỚP EMPLOYEE
+1. YÊU CẦU VỀ THUỘC TÍNH
+Lớp Employee có các thuộc tính private sau:
+id        : String  – Mã nhân viên
+name      : String  – Họ tên
+baseSalary: double  – Lương cơ bản
+bonus     : double  – Thưởng
+tax       : double  – Thuế (0.0 – 1.0)
+2. CONSTRUCTOR
+2.1. Constructor không tham số
+2.2. Constructor đầy đủ tham số
+Employee(String id, String name, double baseSalary, double bonus, double tax)
+3. GETTER / SETTER
+getId(), setId(String id)
+getName(), setName(String name)
+getBaseSalary(), setBaseSalary(double baseSalary)
+getBonus(), setBonus(double bonus)
+getTax(), setTax(double tax)
+4. PHƯƠNG THỨC TÍNH TOÁN
+4.1. calculateNetSalary()
+Kiểu trả về: double
+Công thức:
+netSalary = (baseSalary + bonus) * (1.0 - tax)
+5. toString()
+Employee{id='...', name='...', baseSalary=..., bonus=..., tax=..., netSalary=...}
+netSalary hiển thị 2 chữ số thập phân
+6. GHI CHÚ
+- Thuộc tính private
+- Method public
+- camelCase

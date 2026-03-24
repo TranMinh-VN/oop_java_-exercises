@@ -1,0 +1,50 @@
+Phát biểu problem
+Chỉ còn vài ngày nữa là đến sinh nhật lần thứ năm mươi của nhà văn nổi tiếng người Berland, Berlbury. Nhân dịp này, thư viện địa phương quyết định tổ chức một buổi triển lãm các tác phẩm của nhà văn khoa học viễn tưởng nổi tiếng này. Cũng có quyết định rằng chỉ cần đưa vào triển lãm những cuốn sách được xuất bản trong một khoảng thời gian cụ thể. Rõ ràng là nếu các cuốn sách chênh lệch nhiều về kích thước, khách tham quan sẽ không thích. Đó là lý do tại sao các nhà tổ chức đi đến ý kiến rằng sự khác biệt giữa cuốn sách cao nhất và thấp nhất trong triển lãm không được quá $k$ mm.
+
+Thư viện có $n$ tập sách của Berlbury, được sắp xếp theo trình tự thời gian xuất hiện của chúng. Chiều cao của mỗi cuốn sách tính bằng milimét đã biết, là $h_i$. Vì Berlbury rất được kính trọng trong thành phố, các nhà tổ chức muốn đưa vào triển lãm càng nhiều sách càng tốt, và tìm xem họ có thể bao quát được những giai đoạn sáng tác nào của ông. Bạn được yêu cầu giúp các nhà tổ chức giải quyết nhiệm vụ khó khăn này.
+
+Input
+Dòng đầu tiên của dữ liệu đầu vào chứa hai số nguyên được phân tách bằng dấu cách $n$ ($1 \le n \le 10^5$) và $k$ ($0 \le k \le 10^6$) — số lượng sách của Berlbury trong thư viện, và sự chênh lệch chiều cao tối đa cho phép giữa cuốn sách thấp nhất và cao nhất. Dòng thứ hai chứa $n$ số nguyên được phân tách bằng dấu cách. Mỗi số $h_i$ ($1 \le h_i \le 10^6$) là chiều cao của cuốn sách thứ $i$ tính bằng milimét.
+
+Output
+Dòng đầu tiên của dữ liệu đầu ra in hai số $a$ và $b$ (ngăn cách bằng dấu cách), trong đó $a$ là số lượng sách tối đa mà các nhà tổ chức có thể đưa vào triển lãm, và $b$ là số lượng các khoảng thời gian mà trong đó Berlbury đã xuất bản $a$ cuốn sách, và sự chênh lệch chiều cao giữa cuốn thấp nhất và cao nhất trong số các cuốn sách này không quá $k$ mm.
+
+Trong mỗi dòng tiếp theo trong số $b$ dòng, in hai số nguyên được phân tách bằng dấu cách — chỉ số của tập đầu tiên và tập cuối cùng từ mỗi khoảng thời gian sáng tác thỏa mãn yêu cầu.
+
+Các ví dụ
+Input
+
+3 3
+14 12 10
+Output
+
+2 2
+1 2
+2 3
+Input
+
+2 0
+10 10
+Output
+
+2 1
+1 2
+Input
+
+4 5
+8 19 10 13
+Output
+
+2 1
+3 4
+Giải thích ví dụ
+Ví dụ 1: Chiều cao sách 14, 12, 10, $k=3$.
+Các đoạn con liên tiếp:
+14, 12: Chênh lệch 2 $\le$ 3. Độ dài 2. (Chỉ số 1-2)
+12, 10: Chênh lệch 2 $\le$ 3. Độ dài 2. (Chỉ số 2-3)
+14, 12, 10: Chênh lệch $14-10 = 4 > 3$. Không thỏa mãn.
+Độ dài lớn nhất là 2. Có 2 khoảng thời gian thỏa mãn.
+Ví dụ 3: 8, 19, 10, 13, $k=5$.
+10, 13: Chênh lệch 3 $\le$ 5. Độ dài 2. (Chỉ số 3-4).
+Các đoạn khác dài hơn hoặc bằng 2 không thỏa mãn.
+Kết quả là độ dài 2, có 1 khoảng thời gian (3 4).

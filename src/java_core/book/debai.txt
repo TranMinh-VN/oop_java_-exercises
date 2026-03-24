@@ -1,0 +1,37 @@
+BÀI TẬP: XÂY DỰNG LỚP BOOK
+1. YÊU CẦU VỀ THUỘC TÍNH
+Lớp Book cần có các thuộc tính sau với phạm vi truy cập private:
+Tên thuộc tính | Kiểu dữ liệu | Mô tả
+isbn | String | Mã ISBN của sách
+title | String | Tên sách
+author | String | Tên tác giả
+price | double | Giá niêm yết
+discount | double | Tỷ lệ giảm giá (0.0 – 1.0)
+2. YÊU CẦU VỀ CONSTRUCTOR
+2.1. Constructor không tham số
+Constructor mặc định không có tham số
+2.2. Constructor đầy đủ tham số
+Constructor nhận 5 tham số theo thứ tự:
+isbn, title, author, price, discount
+Khởi tạo đầy đủ các thuộc tính
+3. YÊU CẦU VỀ GETTER VÀ SETTER
+getIsbn(), setIsbn(String isbn)
+getIsbn(), setIsbn(String isbn)
+getTitle(), setTitle(String title)
+getAuthor(), setAuthor(String author)
+getPrice(), setPrice(double price)
+getDiscount(), setDiscount(double discount)
+4. YÊU CẦU VỀ PHƯƠNG THỨC TÍNH TOÁN
+4.1. calculateFinalPrice()
+Kiểu trả về: double
+Công thức:
+finalPrice = price * (1.0 - discount)
+5. YÊU CẦU VỀ PHƯƠNG THỨC HIỂN THỊ
+5.1. toString()
+Định dạng:
+Book{isbn='...', title='...', author='...', price=..., discount=..., finalPrice=...}
+finalPrice hiển thị với 2 chữ số thập phân
+6. GHI CHÚ
+- Thuộc tính: private
+- Method: public
+- Tuân thủ camelCase

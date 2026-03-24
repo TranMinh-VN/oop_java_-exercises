@@ -1,0 +1,28 @@
+Bài toán
+Polycarp đang làm việc với một dự án mới có tên là "Polychat". Theo xu hướng hiện đại trong CNTT, anh ấy quyết định rằng dự án này cũng nên chứa tính năng trò chuyện. Để đạt được mục tiêu này, Polycarp đã dành vài giờ trước máy tính xách tay và thực hiện một máy chủ trò chuyện có thể xử lý ba loại lệnh:
+
+Thêm một người vào cuộc trò chuyện (lệnh 'Add').
+Xóa một người khỏi cuộc trò chuyện (lệnh 'Remove').
+Gửi tin nhắn từ một người đến tất cả mọi người hiện đang trong cuộc trò chuyện, bao gồm cả người gửi tin nhắn (lệnh 'Send').
+Bây giờ Polycarp muốn tìm ra lượng lưu lượng truy cập đi (outgoing traffic) mà máy chủ sẽ tạo ra trong khi xử lý một tập hợp các lệnh cụ thể.
+
+Polycarp biết rằng máy chủ trò chuyện không gửi lưu lượng truy cập cho các lệnh 'Add' và 'Remove'. Khi lệnh 'Send' được xử lý, máy chủ gửi $l$ byte cho mỗi người tham gia cuộc trò chuyện, trong đó $l$ là độ dài của tin nhắn.
+
+Vì Polycarp không có thời gian, anh ấy nhờ bạn giúp giải quyết vấn đề này.
+
+Đầu vào
+Tệp đầu vào sẽ chứa không quá 100 lệnh, mỗi lệnh trên một dòng riêng. Không dòng nào vượt quá 100 ký tự. Định dạng của các lệnh sẽ như sau:
+
++<tên> cho lệnh 'Add'.
+-<tên> cho lệnh 'Remove'.
+<tên_người_gửi>:<văn_bản_tin_nhắn> cho lệnh 'Send'.
+
+<tên> và <tên_người_gửi> là một chuỗi không rỗng gồm các chữ cái Latinh và chữ số.
+<văn_bản_tin_nhắn> có thể chứa các chữ cái, chữ số và dấu cách, nhưng không thể bắt đầu hoặc kết thúc bằng dấu cách.
+<văn_bản_tin_nhắn> có thể là một dòng trống.
+Đảm bảo rằng dữ liệu đầu vào là chính xác, tức là sẽ không có lệnh 'Add' nếu người có tên đó đã có trong cuộc trò chuyện, sẽ không có lệnh 'Remove' nếu không có người có tên đó trong cuộc trò chuyện, v.v.
+
+Tất cả các tên đều phân biệt chữ hoa chữ thường.
+
+Đầu ra
+In một số duy nhất — câu trả lời cho bài toán.

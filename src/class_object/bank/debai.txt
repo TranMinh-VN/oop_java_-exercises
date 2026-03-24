@@ -1,0 +1,65 @@
+Bài toán mô phỏng hệ thống quản lý tài khoản ngân hàng bằng lập trình hướng đối tượng (OOP).
+
+Ngân hàng có nhiều loại tài khoản khác nhau, mỗi tài khoản có các hành vi và đặc điểm riêng. Người dùng có thể thực hiện các thao tác như gửi tiền, rút tiền và kiểm tra số dư.
+
+Các thành phần chính
+Lớp Account (lớp cha - trừu tượng)
+
+Đại diện cho một tài khoản ngân hàng chung.
+
+Chứa thông tin cơ bản như số tài khoản (accountNumber), tên chủ tài khoản (accountHolder), và số dư (balance).
+
+Có các phương thức chung: gửi tiền (deposit), rút tiền (withdraw), và kiểm tra số dư.
+
+Lớp SavingsAccount (kế thừa từ Account)
+
+Đại diện cho tài khoản tiết kiệm.
+
+Có thêm thuộc tính interestRate (lãi suất).
+
+Cung cấp phương thức tính và cộng lãi suất vào số dư.
+
+Lớp CurrentAccount (kế thừa từ Account)
+
+Đại diện cho tài khoản vãng lai (thanh toán).
+
+Có thêm thuộc tính overdraftLimit (hạn mức thấu chi).
+
+Cho phép rút tiền vượt quá số dư trong phạm vi hạn mức thấu chi.
+
+Lớp Bank
+
+Quản lý danh sách nhiều tài khoản khác nhau.
+
+Cung cấp các chức năng: thêm tài khoản mới, tìm tài khoản theo số tài khoản, hiển thị thông tin các tài khoản.
+
+Nhiệm vụ 1: Hoàn thiện lớp SavingsAccount.java
+
+Phương thức: public void withdraw(double amount)
+Yêu cầu:
+Chỉ cho phép rút tiền khi số tiền rút lớn hơn 0.
+Kiểm tra số dư phải đủ (số dư >= số tiền rút).
+Nếu không thỏa mãn điều kiện, in ra các thông báo lỗi tương ứng.
+Nếu hợp lệ, cập nhật lại số dư và in thông báo thành công.
+Nhiệm vụ 2: Hoàn thiện lớp CurrentAccount.java
+
+Phương thức: public void withdraw(double amount)
+Yêu cầu:
+Chỉ cho phép rút tiền khi số tiền rút lớn hơn 0.
+Kiểm tra số tiền rút không được vượt quá tổng của số dư và hạn mức thấu chi (số tiền rút <= số dư + hạn mức thấu chi).
+Nếu không thỏa mãn điều kiện, in ra các thông báo lỗi tương ứng.
+Nếu hợp lệ, cập nhật lại số dư (số dư có thể âm) và in thông báo thành công.
+Nhiệm vụ 3: Hoàn thiện lớp Bank.java
+
+Phương thức 1: public void displayAllAccounts()
+
+Yêu cầu:
+Duyệt qua danh sách tất cả tài khoản trong ngân hàng.
+Gọi phương thức displayDetails() cho mỗi tài khoản để in thông tin chi tiết.
+Xử lý trường hợp ngân hàng chưa có tài khoản nào.
+Phương thức 2: public Account findAccount(String accountNumber)
+
+Yêu cầu:
+Tìm kiếm trong danh sách tài khoản của ngân hàng.
+Trả về đối tượng Account có số tài khoản khớp với tham số đầu vào.
+Nếu không tìm thấy, trả về null.

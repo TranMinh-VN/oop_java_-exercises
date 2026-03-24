@@ -1,0 +1,33 @@
+# Dòng bắt đầu bằng '#' sẽ được bỏ qua
+# Định dạng: LỆNH,tham_số_1,tham_số_2,...
+
+# 1. Khởi tạo các sản phẩm có sẵn
+# LỆNH: PRODUCT,ID,Tên sản phẩm,Giá
+PRODUCT,P001,Laptop Dell XPS 15,45000000
+PRODUCT,P002,iPhone 15 Pro Max,32000000
+PRODUCT,P003,Logitech MX Master 3,2500000
+
+# 2. Tạo một người dùng mới
+# LỆNH: USER,ID,Tên người dùng
+USER,U123,Nguyễn Văn A
+
+# 3. Bắt đầu mua sắm
+# LỆNH: ADD,UserID,ProductID,Số lượng
+ADD,U123,P001,1
+ADD,U123,P002,1
+
+# Hiển thị giỏ hàng lần đầu
+# LỆNH: DISPLAY_CART,UserID
+DISPLAY_CART,U123
+
+# Thêm một sản phẩm đã có trong giỏ, hệ thống sẽ tự động tăng số lượng
+ADD,U123,P002,1
+DISPLAY_CART,U123
+
+# Thêm một sản phẩm mới
+ADD,U123,P003,2
+DISPLAY_CART,U123
+
+# 4. Người dùng quyết định thanh toán
+# LỆNH: CHECKOUT,UserID
+CHECKOUT,U123

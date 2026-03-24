@@ -1,0 +1,26 @@
+Mô tả bài toán
+Mọi người đều biết rằng thủ đô của Berland được kết nối với Bercouver (thủ đô Olympic) bằng một con đường trực tiếp. Để cải thiện khả năng lưu thông của con đường, chỉ có một biển báo giao thông được đặt, giới hạn tốc độ tối đa. Biển báo giao thông ở Berland hơi đặc biệt, bởi vì chúng chỉ giới hạn tốc độ tại điểm trên đường nơi chúng được đặt. Ngay sau khi đi qua biển báo, được phép lái xe ở bất kỳ tốc độ nào.
+
+Được biết rằng chiếc xe của một công dân Berland bình thường có gia tốc (giảm tốc) là a km/h², và có tốc độ tối đa là v km/h. Con đường có chiều dài l km, và biển báo tốc độ, giới hạn tốc độ ở mức w km/h, được đặt cách thủ đô của Berland d km (1 ≤ d < l). Chiếc xe có vận tốc bằng không khi bắt đầu hành trình. Tìm thời gian tối thiểu mà một công dân Berland bình thường sẽ cần để đi từ thủ đô đến Bercouver, nếu anh ta lái xe ở tốc độ tối ưu.
+
+Chiếc xe có thể vào Bercouver ở bất kỳ tốc độ nào.
+
+Đầu vào
+Dòng đầu tiên của tệp đầu vào chứa hai số nguyên a và v (1 ≤ a, v ≤ 10000). Dòng thứ hai chứa ba số nguyên l, d và w (2 ≤ l ≤ 10000; 1 ≤ d < l; 1 ≤ w ≤ 10000).
+
+Đầu ra
+In câu trả lời với ít nhất năm chữ số sau dấu thập phân.
+
+Examples
+Example 1
+Input
+1 1
+2 1 3
+Output
+2.500000000000
+Example 2
+Input
+5 70
+200 170 40
+Output
+8.965874696353

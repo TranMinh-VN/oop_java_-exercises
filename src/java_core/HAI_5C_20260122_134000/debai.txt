@@ -1,0 +1,29 @@
+Mô tả bài toán
+Đây lại là một bài toán khác liên quan đến dãy ngoặc đúng (regular bracket sequences).
+
+Chúng tôi xin nhắc lại rằng một dãy ngoặc được gọi là đúng, nếu bằng cách chèn «+» và «1» vào đó, chúng ta có thể nhận được một biểu thức toán học chính xác. Ví dụ: các dãy «(())()», «()» và «(()(()))» là đúng, trong khi «)(», «(()» và «(()))(« thì không.
+
+Bạn được cho một chuỗi các ký tự «(» và «)». Bạn phải tìm chuỗi con dài nhất của nó là một dãy ngoặc đúng. Bạn cũng phải tìm số lượng các chuỗi con như vậy.
+
+Đầu vào
+Dòng đầu tiên của tệp đầu vào chứa một chuỗi không rỗng, bao gồm các ký tự «(» và «)». Độ dài của nó không vượt quá $10^6$.
+
+Đầu ra
+In độ dài của chuỗi con dài nhất là dãy ngoặc đúng và số lượng các chuỗi con như vậy. Nếu không có chuỗi con nào như vậy, hãy viết dòng duy nhất chứa "0 1".
+
+Examples
+Example 1
+Input
+)((())))(()())
+Output
+6 2
+Explanation
+Vì chuỗi hợp lệ dài nhất là "(()())" và "((()))", mỗi chuỗi có độ dài 6, và có 2 chuỗi như vậy.
+
+Example 2
+Input
+))(
+Output
+0 1
+Explanation
+Vì không có chuỗi hợp lệ nào, nên kết quả là "0 1".

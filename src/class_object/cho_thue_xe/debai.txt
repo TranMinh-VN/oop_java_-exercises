@@ -1,0 +1,68 @@
+Mô tả Bài toán
+Hệ thống mã nguồn này mô phỏng hoạt động của một đại lý cho thuê xe. Mục tiêu là quản lý các loại xe khác nhau, thông tin khách hàng, và các giao dịch thuê trả xe.
+
+Các chức năng chính của hệ thống bao gồm:
+
+Quản lý nhiều loại xe: Hệ thống có thể quản lý các loại xe khác nhau như ô tô (Car) và xe máy (Motorcycle). Việc này được thực hiện thông qua kế thừa, với một lớp trừu tượng Vehicle chung và các lớp con cụ thể.
+
+Quản lý khách hàng: Lưu trữ thông tin cơ bản của khách hàng như mã và tên.
+
+Quản lý giao dịch:
+
+Ghi nhận khi một khách hàng thuê một chiếc xe (rentVehicle).
+
+Xử lý khi khách hàng trả xe (returnVehicle).
+
+Theo dõi trạng thái của mỗi chiếc xe (có sẵn hay đã được thuê).
+
+Tính toán chi phí: Tự động tính tổng chi phí thuê xe dựa trên giá thuê mỗi ngày và tổng số ngày thuê.
+
+Hiển thị thông tin: Có khả năng hiển thị danh sách các xe hiện đang có sẵn để cho thuê.
+
+Yêu cầu: Hoàn thiện các phương thức được để trống trong các lớp RentalAgency và RentalRecord để chương trình quản lý thuê xe hoạt động đúng chức năng.
+
+1. Hoàn thiện hàm rentVehicle(String customerId, String vehicleId) trong lớp RentalAgency
+Mục tiêu: Xử lý logic cho phép một khách hàng thuê một chiếc xe.
+
+Các bước cần thực hiện:
+
+Tìm kiếm khách hàng và xe dựa trên ID được cung cấp.
+
+Kiểm tra các trường hợp không hợp lệ: khách hàng không tồn tại, xe không tồn tại, hoặc xe đã được người khác thuê. Phải in ra thông báo lỗi tương ứng cho từng trường hợp.
+
+Nếu hợp lệ, thay đổi trạng thái của xe thành "đã được thuê" (isAvailable = false).
+
+Tạo một bản ghi thuê xe mới (RentalRecord) và lưu lại vào hệ thống.
+
+In thông báo xác nhận thuê xe thành công, bao gồm tên khách hàng và thông tin xe.
+
+2. Hoàn thiện hàm returnVehicle(String vehicleId) trong lớp RentalAgency
+Mục tiêu: Xử lý logic khi khách hàng trả một chiếc xe đã thuê.
+
+Các bước cần thực hiện:
+
+Tìm kiếm xe dựa trên ID được cung cấp.
+
+Tìm bản ghi giao dịch thuê xe đang hoạt động (chưa có ngày trả) tương ứng với chiếc xe đó.
+
+Kiểm tra trường hợp không tìm thấy giao dịch đang hoạt động và thông báo lỗi.
+
+Nếu tìm thấy, cập nhật trạng thái của xe thành "có sẵn" (isAvailable = true).
+
+Ghi nhận ngày trả xe là ngày hiện tại.
+
+Tính tổng chi phí cho lần thuê đó.
+
+In thông báo trả xe thành công kèm theo tổng chi phí phải trả.
+
+3. Hoàn thiện hàm calculateTotalCost() trong lớp RentalRecord
+Mục tiêu: Tính chính xác tổng số tiền thuê xe dựa trên số ngày đã thuê.
+
+Các bước cần thực hiện:
+
+Xác định ngày kết thúc của chu kỳ thuê. Nếu xe chưa được trả, ngày kết thúc được tính là ngày hiện tại.
+
+Tính tổng số ngày thuê. Lưu ý rằng nếu một chiếc xe được thuê và trả trong cùng một ngày, nó vẫn được tính là 1 ngày thuê.
+
+Tính toán và trả về tổng chi phí cuối cùng.
+

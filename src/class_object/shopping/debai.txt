@@ -1,0 +1,30 @@
+Bài tập mô phỏng một quy trình mua sắm cơ bản trong một hệ thống thương mại điện tử bằng ngôn ngữ Java, tuân thủ các nguyên tắc của lập trình hướng đối tượng.
+
+Quy trình hoạt động như sau:
+
+Sản phẩm (Product): Hệ thống định nghĩa các sản phẩm với các thuộc tính cơ bản và bất biến như ID, tên, và giá.
+
+Người dùng và Giỏ hàng (User & ShoppingCart): Mỗi người dùng (User) sở hữu một giỏ hàng (ShoppingCart) riêng. Mối quan hệ này là một ví dụ về Composition (kết hợp), nơi ShoppingCart là một phần không thể tách rời của User.
+
+Thêm hàng vào giỏ: Người dùng có thể thêm sản phẩm vào giỏ hàng của mình. Hệ thống được thiết kế thông minh:
+
+Nếu sản phẩm chưa có trong giỏ, một mục hàng mới (CartItem) sẽ được tạo.
+
+Nếu sản phẩm đã có, hệ thống chỉ cần tăng số lượng của mục hàng hiện có.
+
+Thanh toán và Đặt hàng (Order): Khi người dùng quyết định thanh toán, một đơn hàng (Order) sẽ được tạo ra. Điểm quan trọng trong thiết kế này là đơn hàng sẽ sao chép toàn bộ thông tin từ giỏ hàng tại thời điểm thanh toán. Điều này đảm bảo rằng đơn hàng là một "bản ghi" bất biến, không bị ảnh hưởng bởi bất kỳ thay đổi nào trong giỏ hàng sau đó (ví dụ: người dùng tiếp tục thêm/xóa sản phẩm).
+
+Yêu cầu:
+Trong file CartItem.java:
+
+public double getSubtotal(): Viết mã để phương thức này trả về tổng tiền của một mặt hàng, được tính bằng công thức: giá sản phẩm * số lượng.
+
+Trong file ShoppingCart.java:
+
+public double calculateTotal(): Hoàn thiện phương thức này để nó tính toán và trả về tổng giá trị của tất cả các mặt hàng có trong giỏ hàng. Bạn sẽ cần duyệt qua danh sách các CartItem và cộng dồn subtotal của chúng.
+
+public void addProduct(Product product, int quantity): Đây là phương thức quan trọng nhất. Bạn cần cài đặt logic để khi thêm một sản phẩm vào giỏ:
+
+Nếu sản phẩm đó chưa có trong giỏ, hãy tạo một CartItem mới và thêm vào danh sách.
+
+Nếu sản phẩm đó đã có trong giỏ, hãy tìm CartItem tương ứng và chỉ cần tăng số lượng của nó lên.

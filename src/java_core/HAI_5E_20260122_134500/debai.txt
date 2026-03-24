@@ -1,0 +1,20 @@
+Mô tả bài toán
+Mọi người đều biết rằng từ lâu trên lãnh thổ của Berland ngày nay đã có các bộ lạc Bindian sinh sống. Thủ đô của họ được bao quanh bởi n ngọn đồi, tạo thành một vòng tròn. Trên mỗi ngọn đồi có một người canh gác, người này quan sát khu vực lân cận cả ngày lẫn đêm.
+
+Trong trường hợp có bất kỳ nguy hiểm nào, người canh gác có thể đốt lửa trên đồi. Một người canh gác có thể nhìn thấy tín hiệu của một người canh gác khác, nếu trên cung tròn nối hai ngọn đồi không có ngọn đồi nào cao hơn bất kỳ ngọn đồi nào trong hai ngọn đồi đó. Vì đối với bất kỳ hai ngọn đồi nào cũng có hai cung tròn khác nhau nối chúng, tín hiệu được nhìn thấy nếu điều kiện nêu trên được thỏa mãn trên ít nhất một trong các cung. Ví dụ, đối với bất kỳ hai người canh gác lân cận nào, đúng là tín hiệu của người này sẽ được người kia nhìn thấy.
+
+Một đặc điểm quan trọng của hệ thống canh gác này là số lượng cặp người canh gác có thể nhìn thấy tín hiệu của nhau. Bạn phải tìm số lượng này dựa trên độ cao của các ngọn đồi đã cho.
+
+Đầu vào
+Dòng đầu tiên của dữ liệu đầu vào chứa một số nguyên n (3 ≤ n ≤ 10^6), n — số lượng ngọn đồi xung quanh thủ đô. Dòng thứ hai chứa n số — độ cao của các ngọn đồi theo chiều kim đồng hồ. Tất cả các số độ cao là số nguyên và nằm trong khoảng từ 1 đến 10^9.
+
+Đầu ra
+In số lượng cặp cần tìm.
+
+Examples
+Example 1
+Input
+5
+1 2 4 5 3
+Output
+7

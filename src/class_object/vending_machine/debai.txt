@@ -1,0 +1,76 @@
+Đây là một chương trình mô phỏng hoạt động của một máy bán hàng tự động bằng ngôn ngữ Java. Hệ thống được thiết kế theo các nguyên tắc lập trình hướng đối tượng, với việc tách biệt rõ ràng các trách nhiệm:
+
+Sản phẩm và Tiền (Item, Coin): Các lớp đơn giản đại diện cho sản phẩm (có tên và giá) và các mệnh giá tiền xu được chấp nhận.
+
+Danh mục Sản phẩm (ProductCatalog): Hoạt động như một "cơ sở dữ liệu" tĩnh, định nghĩa tất cả các sản phẩm mà máy có thể bán.
+
+Kho hàng (Inventory): Một lớp chung (generic) linh hoạt, chịu trách nhiệm theo dõi số lượng tồn kho của bất kỳ đối tượng nào (sản phẩm hoặc tiền).
+
+Logic Máy bán hàng (VendingMachine): Lớp trung tâm, điều phối toàn bộ hoạt động. Nó quản lý trạng thái giao dịch (sản phẩm đang chọn, số dư), xử lý việc chọn hàng, nhận tiền, thực hiện giao dịch, trả tiền thối, và hủy giao dịch.
+
+Xử lý Lỗi (VendingMachineExceptions): Định nghĩa các ngoại lệ (exception) tùy chỉnh cho các tình huống lỗi cụ thể như hết hàng, không đủ tiền, hoặc đưa tiền không hợp lệ.
+
+Yêu cầu chi tiết:
+
+1. Hoàn thiện chức năng kiểm tra tiền hợp lệ:
+
+File: Coin.java
+
+Phương thức: public static boolean isValid(long value)
+
+Nhiệm vụ: Viết phần thân cho phương thức này để kiểm tra xem giá trị value đầu vào có phải là một trong các mệnh giá được máy chấp nhận hay không (được định nghĩa trong mảng ACCEPTED_VALUES).
+
+Trả về true nếu mệnh giá hợp lệ.
+
+Trả về false nếu không hợp lệ.
+
+2. Hoàn thiện chức năng chọn sản phẩm:
+
+File: VendingMachine.java
+
+Phương thức: public void selectItem(Item item)
+
+Nhiệm vụ: Xử lý logic khi người dùng chọn một sản phẩm.
+
+Kiểm tra trong kho itemInventory xem sản phẩm item có còn hàng không.
+
+Nếu còn hàng, hãy gán nó vào biến selectedItem của máy và in thông báo xác nhận.
+
+Nếu đã hết hàng, hãy ném ra ngoại lệ VendingMachineExceptions.SoldOutException kèm theo thông báo lỗi.
+
+3. Hoàn thiện chức năng cốt lõi: Thực hiện giao dịch:
+
+File: VendingMachine.java
+
+Phương thức: public long executeTransaction()
+
+Nhiệm vụ: Đây là logic quan trọng nhất, xử lý việc mua bán và trả tiền.
+
+Bước 1: Kiểm tra xem selectedItem có tồn tại không. Nếu không, thông báo cho người dùng.
+
+Bước 2: So sánh số tiền người dùng đã bỏ vào (currentBalance) với giá của sản phẩm.
+
+Bước 3 (Nếu đủ tiền):
+
+Trừ sản phẩm đã bán ra khỏi kho.
+
+Tính toán tiền thối.
+
+In thông báo giao dịch thành công.
+
+Reset lại trạng thái máy bằng cách gọi resetTransaction().
+
+Trả về số tiền thối.
+
+Bước 4 (Nếu thiếu tiền):
+
+Tính số tiền còn thiếu.
+
+Ném ra ngoại lệ VendingMachineExceptions.NotEnoughMoneyException để thông báo cho người dùng cần bỏ thêm tiền.
+
+Hướng dẫn:
+
+Đọc kỹ các docstring (phần bình luận /** ... */) phía trên mỗi phương thức để hiểu rõ yêu cầu.
+
+Sử dụng các phương thức có sẵn trong các lớp khác (ví dụ itemInventory.hasItem(), itemInventory.deduct()).
+

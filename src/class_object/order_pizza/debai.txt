@@ -1,0 +1,28 @@
+Bài tập mô phỏng một hệ thống đặt hàng Pizza đơn giản theo hướng đối tượng. Mục tiêu là xây dựng một chương trình cho phép người dùng tạo đơn hàng, thêm các loại pizza với kích cỡ và topping tùy chọn, sau đó tính toán tổng chi phí và in ra một hóa đơn hoàn chỉnh.
+
+Các thành phần chính của hệ thống bao gồm:
+
+Order (Đơn hàng): Đại diện cho một đơn hàng của khách hàng. Mỗi đơn hàng có một mã số duy nhất, thời gian tạo, và chứa một danh sách các pizza.
+
+Pizza: Đại diện cho một chiếc pizza. Mỗi pizza có tên (ví dụ: "Hải sản"), kích thước (S, M, L), giá cơ bản và có thể có nhiều topping đi kèm.
+
+Topping: Đại diện cho một loại đồ ăn thêm trên pizza (ví dụ: "Phô mai", "Xúc xích"). Mỗi loại có tên và giá riêng.
+
+Menu: Đóng vai trò như một cơ sở dữ liệu tĩnh, cung cấp giá cho các loại pizza theo kích cỡ và giá cho từng loại topping. Việc tách riêng Menu giúp dễ dàng cập nhật giá cả mà không cần thay đổi logic của các lớp khác.
+
+Nhiệm vụ cụ thể:
+
+Bạn cần phải lập trình cho 3 phương thức sau đây. Đọc kỹ mô tả và yêu cầu trong phần bình luận (docstring) của từng phương thức để thực hiện cho đúng.
+
+Trong file Pizza.java, hoàn thiện phương thức calculatePrice():
+
+Phương thức này phải tính được tổng giá tiền của một chiếc pizza, bao gồm giá cơ bản (basePrice) và tổng giá của tất cả các topping đã được thêm vào.
+
+Trong file Order.java, hoàn thiện phương thức calculateTotal():
+
+Phương thức này phải tính được tổng giá trị của toàn bộ đơn hàng bằng cách tính tổng giá của từng chiếc pizza có trong đơn hàng.
+
+Trong file Order.java, hoàn thiện phương thức printInvoice():
+
+Phương thức này phải in ra một hóa đơn hoàn chỉnh với đầy đủ thông tin: mã đơn hàng, thời gian, chi tiết từng chiếc pizza (tên, size, topping, giá của pizza đó), và tổng số tiền cuối cùng của cả đơn hàng.
+

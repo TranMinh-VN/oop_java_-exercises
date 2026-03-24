@@ -1,0 +1,39 @@
+Bài tập này mô phỏng một ứng dụng đặt vé xem phim đơn giản tại một rạp chiếu phim. Chương trình được xây dựng dựa trên các nguyên tắc của Lập trình Hướng đối tượng (OOP) để quản lý các thực thể phức tạp một cách rõ ràng và có tổ chức.
+
+Các thành phần chính của hệ thống bao gồm:
+
+Cinema (Rạp chiếu phim): Là đối tượng trung tâm, quản lý danh sách các bộ phim (Movie) và các suất chiếu (Showtime). Nó xử lý các logic nghiệp vụ chính như hiển thị phim, tìm suất chiếu và thực hiện đặt vé.
+
+Movie (Phim): Đại diện cho một bộ phim với các thông tin cơ bản như tựa đề, thể loại và thời lượng.
+
+Showtime (Suất chiếu): Đại diện cho một lịch chiếu cụ thể của một bộ phim vào một thời điểm nhất định. Mỗi suất chiếu sở hữu một sơ đồ ghế ngồi (Seat) riêng biệt. Đây là một ví dụ điển hình của quan hệ Composition (một Showtime "có một" Movie và "có một" danh sách các Seat).
+
+Seat (Ghế ngồi): Đại diện cho một chiếc ghế trong phòng chiếu, có mã số và trạng thái đã được đặt (isBooked) hay còn trống.
+
+Ticket (Vé): Là kết quả của một giao dịch đặt vé thành công. Vé chứa thông tin về suất chiếu, các ghế đã đặt và tổng chi phí.
+
+Yêu cầu chi tiết:
+
+Trong file Showtime.java - Hoàn thiện phương thức findSeat(String seatNumber):
+
+Mục tiêu: Viết lại logic để tìm kiếm một đối tượng Seat trong danh sách ghế của suất chiếu dựa trên mã ghế được cung cấp.
+
+Input: Một chuỗi seatNumber (ví dụ: "A1").
+
+Output: Trả về đối tượng Seat nếu tìm thấy, ngược lại trả về null.
+
+Gợi ý: Sử dụng vòng lặp để duyệt qua danh sách ghế và phương thức equalsIgnoreCase() để so sánh mã ghế.
+
+Trong file Cinema.java - Hoàn thiện phương thức bookTickets(Showtime showtime, List<String> seatNumbers):
+
+Mục tiêu: Tái hiện lại quy trình nghiệp vụ cốt lõi của việc đặt vé, bao gồm kiểm tra và cập nhật trạng thái.
+
+Logic (Quan trọng): Chức năng này phải tuân thủ nguyên tắc "tất cả hoặc không có gì".
+
+Bước 1 - Kiểm tra: Trước tiên, phải xác minh rằng tất cả các ghế được yêu cầu đều tồn tại và còn trống. Nếu có bất kỳ một ghế nào không hợp lệ, toàn bộ giao dịch phải bị hủy ngay lập tức (hàm trả về null).
+
+Bước 2 - Cập nhật: Chỉ sau khi đã xác nhận tất cả các ghế đều hợp lệ, bạn mới được phép duyệt qua chúng một lần nữa để cập nhật trạng thái của chúng thành "đã đặt" (gọi hàm book()).
+
+Bước 3 - Hoàn tất: Cuối cùng, tạo một đối tượng Ticket chứa thông tin về những chiếc ghế vừa được đặt thành công và trả về nó.
+
+Output: Trả về một đối tượng Ticket mới nếu đặt vé thành công, ngược lại trả về null.

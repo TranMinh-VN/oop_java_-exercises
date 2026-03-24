@@ -1,0 +1,29 @@
+# Dòng bắt đầu bằng # là bình luận và sẽ được bỏ qua.
+# Định dạng dữ liệu:
+# MOVIE;Tên phim;Thể loại;Thời lượng (phút)
+# SHOWTIME;Tên phim;Thời gian (yyyy-MM-dd HH:mm)
+# BOOK;Tên phim;Thời gian suất chiếu;Mã ghế 1,Mã ghế 2,...
+# DISPLAY_SEATS;Tên phim;Thời gian suất chiếu
+
+# --- Dữ liệu khởi tạo ---
+MOVIE;Lật Mặt 7;Gia đình;130
+MOVIE;Doraemon: Nobita và Bản giao hưởng Địa Cầu;Hoạt hình;110
+SHOWTIME;Lật Mặt 7;2024-05-20 19:30
+SHOWTIME;Lật Mặt 7;2024-05-20 21:00
+SHOWTIME;Doraemon: Nobita và Bản giao hưởng Địa Cầu;2024-05-20 18:00
+
+# --- Kịch bản kiểm thử ---
+# Hiển thị sơ đồ ghế ban đầu
+DISPLAY_SEATS;Lật Mặt 7;2024-05-20 19:30
+
+# Kịch bản 1: Đặt vé thành công
+BOOK;Lật Mặt 7;2024-05-20 19:30;C4,C5
+
+# Hiển thị lại sơ đồ ghế để xem thay đổi
+DISPLAY_SEATS;Lật Mặt 7;2024-05-20 19:30
+
+# Kịch bản 2: Đặt vé thất bại (ghế đã có người đặt)
+BOOK;Lật Mặt 7;2024-05-20 19:30;D5,C5
+
+# Kịch bản 3: Đặt vé thất bại (ghế không tồn tại)
+BOOK;Lật Mặt 7;2024-05-20 19:30;Z9,A1

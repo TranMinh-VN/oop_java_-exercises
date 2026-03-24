@@ -1,0 +1,33 @@
+Phát biểu problem
+Alice và Bob thích các trò chơi. Và bây giờ họ đã sẵn sàng để bắt đầu một trò chơi mới. Họ xếp $n$ thanh sô cô la thành một hàng. Alice bắt đầu ăn sô cô la từng thanh một từ trái sang phải, và Bob ăn từ phải sang trái. Đối với mỗi thanh sô cô la, thời gian cần thiết để người chơi ăn nó là đã biết (Alice và Bob ăn với tốc độ như nhau). Khi người chơi ăn xong một thanh sô cô la, họ ngay lập tức bắt đầu ăn thanh khác. Không được phép ăn hai thanh sô cô la cùng một lúc, bỏ dở thanh đang ăn hoặc nghỉ giữa chừng. Nếu cả hai người chơi bắt đầu ăn cùng một thanh sô cô la đồng thời, Bob sẽ nhường nó cho Alice như một quý ông đích thực.
+
+Mỗi người chơi sẽ ăn bao nhiêu thanh?
+
+Input
+Dòng đầu tiên chứa một số nguyên $n$ ($1 \le n \le 10^5$) — số lượng thanh sô cô la trên bàn. Dòng thứ hai chứa một dãy $t_1, t_2, \dots, t_n$ ($1 \le t_i \le 1000$), trong đó $t_i$ là thời gian (tính bằng giây) cần thiết để ăn thanh thứ $i$ (theo thứ tự từ trái sang phải).
+
+Output
+In ra hai số $a$ và $b$, trong đó $a$ là số thanh Alice ăn được, và $b$ là số thanh Bob ăn được.
+
+Các ví dụ
+Input
+
+5
+2 9 8 2 7
+Output
+
+2 3
+Giải thích ví dụ
+Thời gian tích lũy của Alice: 0. Thời gian tích lũy của Bob: 0.
+Thanh 1 (trái, 2s) và Thanh 5 (phải, 7s).
+Alice ăn Thanh 1 (xong lúc $t=2$). Bob ăn Thanh 5 (xong lúc $t=7$).
+Tỉ số hiện tại: Alice 1 - 0 Bob (đang tính thanh đã xong).
+Alice xong trước, tiếp tục ăn Thanh 2 (9s). Sẽ xong lúc $2+9=11$.
+Bob xong lúc 7, tiếp tục ăn Thanh 4 (2s). Sẽ xong lúc $7+2=9$.
+Lúc $t=9$:
+Bob xong Thanh 4. Alice vẫn đang ăn Thanh 2 (đến 11 mới xong).
+Bob bắt đầu ăn Thanh 3 (8s).
+Lúc $t=11$:
+Alice xong Thanh 2. Bob đang ăn Thanh 3.
+Không còn thanh nào khác để Alice ăn.
+Kết quả: Alice ăn Thanh 1, 2. Bob ăn Thanh 5, 4, 3. Tổng: Alice 2, Bob 3.

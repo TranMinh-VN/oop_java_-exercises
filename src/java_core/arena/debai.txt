@@ -1,0 +1,38 @@
+Yêu cầu
+Bạn cần xây dựng một chương trình Java mô phỏng một đấu trường (Arena), nơi các nhân vật chiến đấu với nhau theo lượt cho đến khi một bên gục ngã.
+
+1. Các lớp đã được cung cấp:
+Character (lớp trừu tượng)
+
+Combatant (interface)
+
+Mage, Warrior (các lớp con của Character)
+
+InsufficientManaException (ngoại lệ)
+
+Arena (chứa phương thức startBattle, bạn cần hoàn thiện)
+
+Main (đã viết sẵn khung, đọc dữ liệu từ file)
+
+2. Công việc của bạn
+Hoàn thiện phương thức attack trong lớp Mage:
+
+Pháp sư tấn công bằng phép, tốn spellCost mana.
+
+Nếu không đủ mana → ném InsufficientManaException.
+
+Nếu có đủ mana → trừ mana, gây sát thương cho đối thủ, in ra thông báo phép thuật.
+
+Hoàn thiện phương thức startBattle trong lớp Arena:
+
+Trận chiến diễn ra theo lượt.
+
+Mỗi lượt: người tấn công gọi attack().
+
+Nếu đối thủ chết (HP <= 0) → dừng trận đấu.
+
+Nếu pháp sư không đủ mana → bắt ngoại lệ, in ra thông báo và gọi recoverMana().
+
+In đầy đủ diễn biến trận đấu.
+
+Kết thúc trận chiến, in tên người chiến thắng.
