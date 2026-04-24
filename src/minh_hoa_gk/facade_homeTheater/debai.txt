@@ -1,0 +1,29 @@
+1. Mô tả bài toán (Problem Statement)
+Bạn là developer home theater, triển khai Facade Pattern. Facade class simplify subsystem (Projector, SoundSystem, DVDPlayer).
+
+2. UML Class Diagram (Text-based)
+Class Projector
++ void on()
++ void off()
++ void setInput(String input)
+
+Class SoundSystem
++ void on()
++ void off()
++ void setVolume(int level)
+
+Class DVDPlayer
++ void on()
++ void off()
++ void play(String movie)
+
+Class HomeTheaterFacade
+- private Projector projector
+- private SoundSystem soundSystem
+- private DVDPlayer dvdPlayer
++ HomeTheaterFacade(Projector projector, SoundSystem soundSystem, DVDPlayer dvdPlayer)
++ void watchMovie(String movie)  // turn on all, set input, play movie
++ void endMovie()  // turn off all
+3. Logic Constraints
+Facade provides simple interface.
+Encapsulates subsystem complexity.

@@ -1,0 +1,31 @@
+1. Mô tả bài toán (Problem Statement)
+Bạn là kỹ sư thiết kế hệ thống trạm sạc xe điện. Nhiệm vụ của bạn là tạo lớp EVChargingStation với tính đóng gói (encapsulation) để quản lý mức pin hiện tại và sức chứa tối đa của trạm sạc. Phương thức charge phải kiểm tra và đảm bảo không vượt quá công suất tối đa của trạm.
+
+2. UML Class Diagram (Text-based)
+Class EVChargingStation
+- private String stationId
+- private double maxCapacity
+- private double currentBattery
++ EVChargingStation(String stationId, double maxCapacity)
++ void charge(double kwh)
++ double getCurrentBattery()
++ double getMaxCapacity()
++ String getStationId()
++ String toString()
+3. Logic Constraints (Ràng buộc logic)
+stationId: Không được rỗng hoặc null. Phải là chuỗi không trống.
+maxCapacity: Phải lớn hơn 0 (> 0).
+currentBattery: Khởi tạo bằng 0. Không được âm.
+Phương thức charge(double kwh):
+Nếu kwh âm, ném IllegalArgumentException với thông báo "Charge amount must be positive".
+Nếu currentBattery + kwh > maxCapacity, chỉ sạc đến giới hạn maxCapacity (không ném exception, chỉ cap lại).
+Ngược lại, currentBattery += kwh.
+Các getter trả về giá trị chính xác.
+toString() trả về định dạng: EVChargingStation{stationId='ID', currentBattery=X.XX, maxCapacity=Y.YY}
+4. Ví dụ Input/Output (Examples)
+Constructor: new EVChargingStation("ST001", 100.0)
+Tạo trạm với ID "ST001", maxCapacity 100.0, currentBattery = 0.0
+Charge bình thường: charge(50.0) → currentBattery = 50.0
+Charge vượt quá: charge(60.0) khi currentBattery = 50.0 → currentBattery = 100.0 (được cap)
+Charge âm: charge(-10.0) → Ném IllegalArgumentException
+toString(): EVChargingStation{stationId='ST001', currentBattery=100.0, maxCapacity=100.0}

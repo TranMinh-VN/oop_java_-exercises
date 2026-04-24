@@ -1,0 +1,60 @@
+Spec_Q1_BankAccount (Quản lý tài khoản ngân hàng)
+1. Mô tả bài toán
+Xây dựng hệ thống quản lý tài khoản ngân hàng cơ bản. Mỗi tài khoản thuộc sở hữu của một cá nhân (AccountOwner) và có số dư (balance). Hệ thống cho phép thực hiện và ghi lại giao dịch cuối cùng (Transaction).
+
+2. Cấu trúc Class
+Class Transaction
+Thuộc tính:
+private double amount (Số tiền giao dịch)
+private String type (Loại giao dịch, ví dụ: "Deposit" - Nạp tiền, "Withdrawal" - Rút tiền)
+Phương thức:
+Constructor: public Transaction(double amount, String type)
+Getter/Setter cho tất cả thuộc tính.
+Ràng buộc:
+amount phải là số dương (> 0). Nếu không, ném IllegalArgumentException: "Transaction amount must be positive".
+type không được null hoặc rỗng. Nếu sai, ném IllegalArgumentException: "Transaction type cannot be null or empty".
+toString(): Trả về chuỗi định dạng: type: amount (Ví dụ: Deposit: 100.0)
+Class AccountOwner
+Thuộc tính: private String name (Tên chủ tài khoản)
+Phương thức:
+Constructor: public AccountOwner(String name)
+Getter/Setter cho name.
+Ràng buộc: name không được null hoặc rỗng. Nếu sai, ném IllegalArgumentException: "Owner name cannot be null or empty".
+toString(): Trả về chuỗi định dạng: Owner[tên_chủ_tài_khoản]
+Class BankAccount (Public Class)
+Thuộc tính:
+private AccountOwner owner (Đối tượng chủ tài khoản)
+private double balance (Số dư hiện tại)
+private Transaction lastTx (Giao dịch cuối cùng đã thực hiện, mặc định ban đầu là null)
+Phương thức:
+Constructor: public BankAccount(AccountOwner owner, double initialBalance)
+Getter/Setter cho owner và balance.
+Ràng buộc:
+owner không được phép null. Nếu null, ném IllegalArgumentException: "Owner cannot be null".
+initialBalance không được âm (< 0). Nếu sai, ném IllegalArgumentException: "Balance cannot be negative".
+public void processTransaction(Transaction tx):
+Kiểm tra tx không được null (Ném IllegalArgumentException: "Transaction cannot be null").
+Nếu loại giao dịch là "Withdrawal" và số tiền rút lớn hơn số dư hiện tại, ném IllegalArgumentException: "Insufficient funds".
+Cập nhật số dư dựa trên loại giao dịch ("Deposit" -> cộng vào, "Withdrawal" -> trừ đi).
+Lưu giao dịch này vào thuộc tính lastTx.
+public Transaction getLastTx(): Trả về giao dịch cuối cùng.
+toString(): Trả về chuỗi định dạng: Account[Owner=Tên_Chủ, Balance=Số_Dư, LastTx=(Thông_tin_Tx_hoặc_None)]
+Ví dụ khi chưa có giao dịch: Account[Owner=Alice, Balance=1000.0, LastTx=(None)]
+Ví dụ sau khi nạp 500: Account[Owner=Alice, Balance=1500.0, LastTx=(Deposit: 500.0)]
+3. Ví dụ Input/Output
+Input:
+John Doe
+1000.0
+500.0
+Deposit
+Output:
+
+Account[Owner=John Doe, Balance=1500.0, LastTx=(Deposit: 500.0)]
+Input:
+
+Jane Smith
+500.0
+600.0
+Withdrawal
+Output:
+IllegalArgumentException (Do không đủ tiền: "Insufficient funds")

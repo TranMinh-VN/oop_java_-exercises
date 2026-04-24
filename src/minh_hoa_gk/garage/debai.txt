@@ -1,0 +1,44 @@
+Spec_Q2_Garage (Quản lý gara)
+1. Mô tả bài toán
+Xây dựng hệ thống quản lý gara ô tô. Hệ thống cần quản lý thông tin hãng xe (Make), thợ sửa xe (Mechanic), ô tô (Car) và thực thể gara (Garage).
+
+Lớp Garage sử dụng ArrayList để quản lý danh sách xe và đội ngũ nhân viên, đồng thời có thuộc tính static để đếm tổng số gara.
+
+2. Cấu trúc Class
+Class Make
+Thuộc tính: private String name, private String country
+Phương thức:
+Constructor: public Make(String name, String country)
+Ràng buộc: name và country không được null/rỗng.
+toString(): Trả về tên (quốc_gia) (Ví dụ: Toyota (Japan))
+Class Mechanic
+Thuộc tính: private String name, private String specialty (chuyên môn)
+Phương thức:
+Constructor: public Mechanic(String name, String specialty)
+Ràng buộc: name và specialty không được null/rỗng.
+toString(): Trả về tên [chuyên_môn] (Ví dụ: John [Engine])
+Class Car
+Thuộc tính: private String model, private String color, private Make make
+Phương thức:
+Constructor: public Car(String model, String color, Make make)
+Ràng buộc: model, color không null/rỗng. make không được null.
+toString(): Trả về màu model by thông_tin_hãng
+Class Garage (Public Class)
+Thuộc tính:
+private String owner (tên chủ gara)
+private ArrayList<Car> cars
+private ArrayList<Mechanic> staff
+private static int totalGarages
+Phương thức:
+Constructor: Tăng totalGarages khi tạo gara mới.
+public static int getTotalGarages(): Trả về tổng số gara.
+public void addCar(Car car): Thêm xe vào gara.
+public void addMechanic(Mechanic mechanic): Thêm thợ vào đội ngũ.
+public ArrayList<Car> findCarsByMake(String makeName): Trả về danh sách xe thuộc một hãng cụ thể (không phân biệt hoa thường).
+toString(): Trả về tên_chủ's Garage (Cars: số_lượng_xe, Staff: số_lượng_thợ)
+3. Ví dụ Input/Output
+Hệ thống thực hiện tạo gara, thêm thợ và xe.
+
+Thao tác: Gara của "Mr. Tung", thêm 1 thợ và 2 xe Toyota.
+Output: Mr. Tung's Garage (Cars: 2, Staff: 1)
+Tìm kiếm hãng Toyota: Trả về danh sách 2 xe.
